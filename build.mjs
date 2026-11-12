@@ -30,7 +30,7 @@ written.push(out('404.html', notFound()));
 
 // static assets
 const staticDir = join(root, 'src', 'static');
-for (const f of ['style.css', 'site.js']) {
+for (const f of ['style.css', 'site.js', 'boot.js']) {
   mkdirSync(join(root, 'assets'), { recursive: true });
   copyFileSync(join(staticDir, f), join(root, 'assets', f));
   written.push('assets/' + f);

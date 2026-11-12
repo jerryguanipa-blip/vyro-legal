@@ -1,7 +1,6 @@
 // Progressive enhancement only: the site is fully readable without JavaScript. No cookies, no storage, no network.
 (() => {
-  const root = document.documentElement;
-  root.classList.add('js');
+  document.documentElement.classList.add('js'); // also set earlier by boot.js to avoid a layout shift
 
   // mobile menu
   const burger = document.querySelector('.burger');

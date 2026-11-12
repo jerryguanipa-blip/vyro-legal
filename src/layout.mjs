@@ -104,6 +104,7 @@ ${hreflang}
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${abs(og)}">
+<script src="/assets/boot.js"></script>
 <link rel="stylesheet" href="/assets/style.css">
 ${ld}
 </head>
