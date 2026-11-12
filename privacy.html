@@ -1,171 +1,131 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-page="privacy">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VYRO — Privacy Policy</title>
-<link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="assets/style.css">
+<title>Política de privacidad | VYRO</title>
+<meta name="description" content="Cómo trata VYRO tus datos: qué se queda en tu teléfono, qué se envía temporalmente, durante cuánto tiempo y con qué proveedores.">
+<meta name="theme-color" content="#07080c">
+<meta name="color-scheme" content="dark">
+
+<link rel="canonical" href="https://vyro-hd.vercel.app/privacy.html">
+<link rel="alternate" hreflang="es" href="https://vyro-hd.vercel.app/privacy.html">
+<link rel="alternate" hreflang="en" href="https://vyro-hd.vercel.app/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://vyro-hd.vercel.app/privacy.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VYRO">
+<meta property="og:title" content="Política de privacidad | VYRO">
+<meta property="og:description" content="Cómo trata VYRO tus datos: qué se queda en tu teléfono, qué se envía temporalmente, durante cuánto tiempo y con qué proveedores.">
+<meta property="og:url" content="https://vyro-hd.vercel.app/privacy.html">
+<meta property="og:locale" content="es_PE">
+<meta property="og:image" content="https://vyro-hd.vercel.app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VYRO | Optimiza tus videos para Estados de WhatsApp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Política de privacidad | VYRO">
+<meta name="twitter:description" content="Cómo trata VYRO tus datos: qué se queda en tu teléfono, qué se envía temporalmente, durante cuánto tiempo y con qué proveedores.">
+<meta name="twitter:image" content="https://vyro-hd.vercel.app/assets/og.png">
+<link rel="stylesheet" href="/assets/style.css">
+
 </head>
-<body>
-<div class="topbar">
-  <div class="brand"><img src="assets/logo.png" alt="VYRO" width="32" height="32"> VYRO</div>
-  <nav class="links">
-    <a href="index.html">Home</a>
-    <a href="privacy.html" class="active">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="support.html">Support</a>
-  </nav>
-  <div class="lang-toggle">
-    <button data-lang="es">ES</button>
-    <button data-lang="en">EN</button>
+<body class="">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="hdr" id="top">
+  <div class="wrap hdr-in">
+    <a class="brand" href="/" aria-label="VYRO"><img src="/assets/logo-96.png" alt="" width="36" height="36"><span>VYRO</span></a>
+    <nav class="nav" id="nav" aria-label="Menú">
+      <a href="/">Inicio</a>
+      <a href="/#how">Cómo funciona</a>
+      <a href="/#features">Características</a>
+      <a href="/#compare">Comparación</a>
+      <a href="/#plans">Planes</a>
+      <a href="/#faq">Preguntas</a>
+      <a href="/support.html">Soporte</a>
+      <a href="/#downloads">Descargas</a>
+    </nav>
+    <div class="hdr-tools">
+      <a class="lang" href="/en/privacy.html" hreflang="en" lang="en" title="Read this page in English" aria-label="Read this page in English">EN</a>
+      <button class="burger" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menú" data-open="Menú" data-close="Cerrar menú"><svg class="ic ic-open" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic ic-close" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
   </div>
-</div>
+</header>
+<main id="main">
 
-<main>
-
-<div class="lang-block" data-lang="es">
-<h1>Politica de Privacidad de VYRO</h1>
-<p class="effective-date">Vigente desde: 9 de noviembre de 2026</p>
-
-<div class="card">
-<p>Esta politica describe que datos procesa <strong>VYRO HD Video Optimizer</strong> ("VYRO"), aplicacion para Android desarrollada por <strong>Jerry Boy Official</strong> (paquete <code>com.statusmax.statusmax</code>), y como se manejan. Esta redactada a partir de una revision directa del codigo y la configuracion real de la aplicacion, no de una plantilla generica.</p>
-</div>
-
-<h2>1. Que hace VYRO</h2>
-<p>VYRO permite seleccionar o grabar un video o foto y optimizarlo (ajustar resolucion/calidad de forma real, sin inventar detalle) para compartirlo despues, por ejemplo por WhatsApp. La optimizacion se ejecuta <strong>en el propio telefono</strong>, con los componentes de video del propio Android. Si eliges recibir el resultado en un chat de WhatsApp (la forma principal de uso), el video ya optimizado se sube temporalmente a un servidor de VYRO para poder enviartelo; ver la seccion 6.</p>
-
-<h2>2. Acceso a videos y fotos</h2>
-<p>VYRO solicita permiso para acceder a tu galeria (fotos y videos) unicamente para que puedas elegir el archivo que quieres optimizar, y permiso de camara/microfono unicamente si eliges grabar un video nuevo desde la app en lugar de elegir uno existente. Estos archivos se leen y procesan localmente. Unicamente el video ya optimizado que decides recibir por WhatsApp se sube a un servidor de VYRO, tal como se explica en la seccion 6; tus archivos originales y tu galeria nunca se suben.</p>
-
-<h2>3. Que datos permanecen exclusivamente en tu dispositivo</h2>
-<ul>
-<li>Los videos y fotos que optimizas: se guardan en el almacenamiento/galeria de tu propio telefono.</li>
-<li>El progreso de un procesamiento en curso (para poder mostrarlo si minimizas la app).</li>
-<li>Si ya viste la introduccion/tutorial de la app.</li>
-<li>Un indicador local de tu estado de suscripcion, usado solo para mostrar la interfaz correcta al instante mientras se confirma el estado real con Google Play (ver seccion 5). Este indicador nunca es la fuente de verdad: siempre se sobrescribe con lo que reporte Google Play.</li>
-</ul>
-<p>Ninguno de estos datos sale de tu telefono ni se comparte con Jerry Boy Official ni con terceros.</p>
-
-<h2>4. Permisos de Android que utiliza VYRO</h2>
-<table>
-<tr><th>Permiso</th><th>Para que se usa</th></tr>
-<tr><td>Fotos y videos (galeria)</td><td>Elegir el archivo que quieres optimizar.</td></tr>
-<tr><td>Camara / Microfono</td><td>Solo si grabas un video nuevo directamente desde VYRO.</td></tr>
-<tr><td>Notificaciones</td><td>Avisarte localmente cuando termina el procesamiento.</td></tr>
-<tr><td>Servicio en primer plano / evitar suspension</td><td>Permitir que el procesamiento continue si minimizas la app o bloqueas la pantalla.</td></tr>
-<tr><td>Facturacion de Google Play</td><td>Comprar/gestionar la suscripcion VYRO PRO.</td></tr>
-<tr><td>Internet</td><td>Procesar compras con Google Play Billing y, cuando eliges recibir tu video por WhatsApp, subir el video ya optimizado a un servidor de VYRO (seccion 6).</td></tr>
-</table>
-<p>Todos estos permisos son solicitados por Android en el momento en que se necesitan, y puedes revisarlos o revocarlos en Ajustes del sistema en cualquier momento.</p>
-
-<h2>5. Suscripciones y Google Play Billing</h2>
-<p>VYRO PRO se ofrece mediante suscripcion mensual o anual, gestionada enteramente por <strong>Google Play Billing</strong>. Google Play es responsable de procesar el pago, verificar la elegibilidad de la prueba gratuita de 3 dias, renovar, cancelar y reembolsar la suscripcion. VYRO nunca ve ni almacena tu numero de tarjeta ni datos de pago: solo recibe de Google Play un estado de acceso (activo/inactivo) para saber si debe mostrar la app sin marca de agua. La restauracion de compras ("Restaurar compra") tambien se resuelve consultando directamente a Google Play, asociada a tu cuenta de Google, sin que exista una cuenta o contrasena propia de VYRO.</p>
-
-<h2>6. Entrega por WhatsApp y servidor de VYRO</h2>
-<p><strong>Entrega por chat de WhatsApp (principal).</strong> Cuando pulsas el boton para recibir tu video en WhatsApp, la app sube por HTTPS el video <em>ya optimizado</em> (no el original) a un servidor de VYRO alojado en Fly.io (Estados Unidos) y recibe un codigo aleatorio de un solo uso, valido por 30 minutos. La app abre un chat con el numero oficial de WhatsApp Business de VYRO con ese codigo escrito; cuando pulsas ENVIAR, el servidor valida el codigo y te devuelve el video en ese mismo chat. Despues puedes reenviarlo a tu Estado.</p>
-<p><strong>Que datos intervienen.</strong> (a) El video optimizado, solo el tiempo necesario para entregartelo; (b) el codigo de un solo uso; (c) tu numero de WhatsApp y el mensaje que envias, que el servidor recibe para saber a quien responder. VYRO <strong>no guarda tu numero de telefono</strong> en su base de datos ni lo usa para otro fin; en los registros tecnicos del servidor aparece solo enmascarado.</p>
-<p><strong>Cuanto tiempo se conserva.</strong> El video se elimina automaticamente del servidor al confirmarse su entrega, y en todo caso cuando vence el codigo (30 minutos) mas un margen de limpieza; en la practica no permanece mas de aproximadamente una hora. Un codigo ya usado o vencido no sirve para volver a recibir el video. VYRO no mira, analiza, vende ni reutiliza el contenido de tus videos.</p>
-<p><strong>Terceros que participan.</strong> El mensaje viaja por la plataforma WhatsApp Business de Meta y por Twilio, el proveedor de mensajeria que VYRO usa para recibir y enviar mensajes de WhatsApp; ambos tratan datos como tu numero, la fecha y el estado de entrega segun sus propias politicas de privacidad (Twilio puede conservar registros de mensajeria). El servidor esta alojado en Fly.io, que puede conservar registros tecnicos (por ejemplo direcciones IP) para operar y proteger el servicio.</p>
-<p><strong>Alternativa sin servidor.</strong> Si en cambio usas la opcion de compartir el archivo con WhatsApp u otra app mediante el menu de Android, VYRO entrega el archivo directamente al sistema operativo y ese archivo no pasa por ningun servidor de VYRO.</p>
-
-<h2>7. Publicidad y analitica de terceros</h2>
-<p>VYRO no integra ningun SDK de publicidad, rastreo o analitica de terceros (verificado directamente en el codigo de la aplicacion). No se usan identificadores de publicidad ni se comparte informacion con redes publicitarias.</p>
-
-<h2>8. Cuentas y datos personales</h2>
-<p>VYRO no requiere crear una cuenta ni pide tu nombre ni tu correo. Tu numero de WhatsApp solo interviene, de forma transitoria, cuando eliges recibir el video por chat (seccion 6). La unica relacion con una cuenta es tu propia cuenta de Google al comprar o restaurar una suscripcion, gestionada por Google segun su propia politica de privacidad.</p>
-
-<h2>9. Menores de edad</h2>
-<p>VYRO es una herramienta de optimizacion de video de proposito general, no dirigida especificamente a ninos, y no recopila intencionalmente datos personales de menores.</p>
-
-<h2>10. Seguridad y retencion</h2>
-<p>La optimizacion se hace en tu telefono, asi que la seguridad de tus originales depende principalmente de Android y de tu dispositivo. Los videos que se suben para entregartelos viajan cifrados (HTTPS), se identifican con un codigo aleatorio imposible de adivinar y se borran solos como se explica en la seccion 6. Puedes eliminar los datos guardados por la app en cualquier momento borrando los archivos de tu galeria o desinstalando la aplicacion (lo que elimina tambien sus preferencias locales).</p>
-
-<h2>11. Tus derechos</h2>
-<p>VYRO no conserva tus videos mas alla de la entrega ni guarda tu numero de telefono, por lo que no hay un perfil tuyo que consultar o corregir; los registros de mensajeria que conserven Twilio o Meta se rigen por sus politicas. Puedes pedir la eliminacion de cualquier dato asociado a un codigo de entrega escribiendo al correo de contacto. Para cualquier consulta sobre esta politica, o sobre datos de facturacion (que gestiona Google), puedes escribir a: <a class="contact-email" href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a>.</p>
-
-<h2>12. Cambios a esta politica</h2>
-<p>Si esta politica cambia, se actualizara en esta misma pagina indicando la nueva fecha de vigencia.</p>
-
-<h2>13. Contacto</h2>
-<p>Desarrollador: Jerry Boy Official.<br>Correo de soporte: <a class="contact-email" href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a>.</p>
-</div>
-
-<div class="lang-block" data-lang="en">
-<h1>VYRO Privacy Policy</h1>
-<p class="effective-date">Effective date: November 9, 2026</p>
-
-<div class="card">
-<p>This policy describes what data <strong>VYRO HD Video Optimizer</strong> ("VYRO"), an Android app developed by <strong>Jerry Boy Official</strong> (package <code>com.statusmax.statusmax</code>), processes and how it is handled. It was written from a direct review of the app's real code and configuration, not a generic template.</p>
-</div>
-
-<h2>1. What VYRO does</h2>
-<p>VYRO lets you pick or record a video or photo and optimize it (a real resolution/quality adjustment, not an invented one) so you can share it afterwards, for example via WhatsApp. Optimization runs <strong>entirely on your phone</strong>, using Android's own video components. If you choose to receive the result in a WhatsApp chat (the main way to use the app), the already-optimized video is uploaded temporarily to a VYRO server so it can be sent back to you; see section 6.</p>
-
-<h2>2. Access to photos and videos</h2>
-<p>VYRO requests access to your gallery (photos and videos) only so you can pick the file you want to optimize, and camera/microphone access only if you choose to record a new video from inside the app instead of picking an existing one. These files are read and processed locally. Only the already-optimized video that you choose to receive on WhatsApp is uploaded to a VYRO server, as explained in section 6; your original files and your gallery are never uploaded.</p>
-
-<h2>3. Data that stays exclusively on your device</h2>
-<ul>
-<li>The videos/photos you optimize: saved to your own phone's storage/gallery.</li>
-<li>The progress of an in-progress job (so it can be shown again if you minimize the app).</li>
-<li>Whether you've already seen the app's intro/tutorial.</li>
-<li>A local hint of your subscription status, used only to paint the right UI instantly while the real status is confirmed with Google Play (see section 5). This hint is never the source of truth: it is always overwritten by whatever Google Play reports.</li>
-</ul>
-<p>None of this data leaves your phone or is shared with Jerry Boy Official or any third party.</p>
-
-<h2>4. Android permissions VYRO uses</h2>
-<table>
-<tr><th>Permission</th><th>What it's used for</th></tr>
-<tr><td>Photos and videos (gallery)</td><td>Choosing the file you want to optimize.</td></tr>
-<tr><td>Camera / Microphone</td><td>Only when recording a new video directly from VYRO.</td></tr>
-<tr><td>Notifications</td><td>Locally telling you when processing finishes.</td></tr>
-<tr><td>Foreground service / keep-awake</td><td>Letting processing continue if you minimize the app or lock the screen.</td></tr>
-<tr><td>Google Play Billing</td><td>Purchasing/managing the VYRO PRO subscription.</td></tr>
-<tr><td>Internet</td><td>Process purchases with Google Play Billing and, when you choose to receive your video on WhatsApp, upload the already-optimized video to a VYRO server (section 6).</td></tr>
-</table>
-<p>All of these are requested by Android at the moment they're needed, and you can review or revoke them from system Settings at any time.</p>
-
-<h2>5. Subscriptions and Google Play Billing</h2>
-<p>VYRO PRO is offered as a monthly or yearly subscription, handled entirely by <strong>Google Play Billing</strong>. Google Play is responsible for processing payment, verifying eligibility for the 3-day free trial, and handling renewal, cancellation, and refunds. VYRO never sees or stores your card details: it only receives an access status (active/inactive) from Google Play to know whether to show the app without the watermark. "Restore purchase" is also resolved by asking Google Play directly, tied to your Google account -- there is no separate VYRO account or password.</p>
-
-<h2>6. WhatsApp delivery and the VYRO server</h2>
-<p><strong>Delivery in a WhatsApp chat (main flow).</strong> When you tap the button to receive your video on WhatsApp, the app uploads the <em>already-optimized</em> video (not the original) over HTTPS to a VYRO server hosted on Fly.io (United States) and receives a random, single-use code valid for 30 minutes. The app opens a chat with VYRO's official WhatsApp Business number with that code typed in; when you press SEND, the server validates the code and sends the video back to you in that same chat. You can then forward it to your Status.</p>
-<p><strong>What data is involved.</strong> (a) The optimized video, only for as long as needed to deliver it to you; (b) the single-use code; (c) your WhatsApp number and the message you send, which the server receives so it knows whom to reply to. VYRO <strong>does not store your phone number</strong> in its database or use it for any other purpose; in the server's technical logs it only appears masked.</p>
-<p><strong>How long it is kept.</strong> The video is deleted automatically from the server once its delivery is confirmed, and in any case when the code expires (30 minutes) plus a cleanup margin; in practice it does not stay longer than roughly one hour. A used or expired code cannot be used to receive the video again. VYRO does not view, analyze, sell or reuse the content of your videos.</p>
-<p><strong>Third parties involved.</strong> The message travels through Meta's WhatsApp Business platform and through Twilio, the messaging provider VYRO uses to receive and send WhatsApp messages; both process data such as your number, the date and the delivery status under their own privacy policies (Twilio may keep messaging records). The server is hosted on Fly.io, which may keep technical logs (for example IP addresses) to operate and protect the service.</p>
-<p><strong>Alternative without a server.</strong> If you instead use the option to share the file with WhatsApp or another app through Android's share menu, VYRO hands the file directly to the operating system and that file does not pass through any VYRO server.</p>
-
-<h2>7. Third-party advertising and analytics</h2>
-<p>VYRO does not integrate any third-party advertising, tracking, or analytics SDK (verified directly in the app's code). No advertising identifiers are used and no information is shared with ad networks.</p>
-
-<h2>8. Accounts and personal data</h2>
-<p>VYRO does not require creating an account or ask for your name or email. Your WhatsApp number is involved only transiently, when you choose to receive the video in a chat (section 6). The only account involved is your own Google account when purchasing or restoring a subscription, handled by Google under its own privacy policy.</p>
-
-<h2>9. Children</h2>
-<p>VYRO is a general-purpose video optimization tool, not specifically directed at children, and does not intentionally collect personal data from minors.</p>
-
-<h2>10. Security and retention</h2>
-<p>Optimization happens on your phone, so the security of your originals mainly depends on Android and your device. Videos uploaded for delivery travel encrypted (HTTPS), are identified by an unguessable random code and are deleted automatically as explained in section 6. You can delete data saved by the app at any time by removing the files from your gallery or uninstalling the app (which also removes its local preferences).</p>
-
-<h2>11. Your rights</h2>
-<p>VYRO does not keep your videos beyond delivery and does not store your phone number, so there is no profile of you to access or correct; messaging records kept by Twilio or Meta are governed by their policies. You can request deletion of any data tied to a delivery code by writing to the contact email. For any question about this policy, or about billing data (handled by Google), you can write to: <a class="contact-email" href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a>.</p>
-
-<h2>12. Changes to this policy</h2>
-<p>If this policy changes, it will be updated on this same page with a new effective date.</p>
-
-<h2>13. Contact</h2>
-<p>Developer: Jerry Boy Official.<br>Support email: <a class="contact-email" href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a>.</p>
-</div>
-
+<article class="wrap doc">
+  <header class="doc-h">
+    <p class="eyebrow">Vigente desde: 12 de noviembre de 2026 · Versión 2.0</p>
+    <h1>Política de privacidad</h1>
+    <p class="sub">Qué datos trata VYRO, para qué, durante cuánto tiempo y con qué proveedores. Redactada a partir de la revisión del código y de la configuración reales de la aplicación.</p>
+  </header>
+  <div class="doc-grid">
+    <nav class="toc" aria-label="En esta página"><p class="toc-h">En esta página</p><ol><li><a href="#responsable">Quién es el responsable</a></li><li><a href="#resumen">Resumen en lenguaje claro</a></li><li><a href="#que-hace">Qué hace VYRO</a></li><li><a href="#datos">Qué datos se tratan</a></li><li><a href="#finalidades">Para qué usamos los datos</a></li><li><a href="#archivos">Acceso a tus videos y fotos</a></li><li><a href="#local">Datos que permanecen solo en tu dispositivo</a></li><li><a href="#entrega">Entrega por WhatsApp y servidor de VYRO</a></li><li><a href="#telefono">Tu número de teléfono y los mensajes</a></li><li><a href="#conservacion">Cuánto tiempo se conserva</a></li><li><a href="#terceros">Proveedores que participan</a></li><li><a href="#transferencias">Transferencias internacionales</a></li><li><a href="#permisos">Permisos de Android</a></li><li><a href="#suscripciones">Suscripciones y pagos</a></li><li><a href="#ads">Publicidad y analítica de terceros</a></li><li><a href="#web">Este sitio web y las cookies</a></li><li><a href="#seguridad">Seguridad</a></li><li><a href="#sin-servidor">Alternativa sin servidor</a></li><li><a href="#menores">Menores de edad</a></li><li><a href="#derechos">Tus derechos</a></li><li><a href="#solicitudes">Cómo pedir la eliminación de datos</a></li><li><a href="#independencia">Independencia de WhatsApp y Meta</a></li><li><a href="#cambios">Cambios en esta política</a></li><li><a href="#contacto">Contacto</a></li></ol></nav>
+    <div class="doc-body"><section id="responsable" class="doc-s"><h2><span class="num">1</span>Quién es el responsable</h2><p>El responsable del tratamiento es <strong>Jerry Boy Official</strong>, desarrollador individual de <strong>VYRO HD Video Optimizer</strong> (“VYRO”, paquete Android <code>com.statusmax.statusmax</code>). No se declara una empresa registrada distinta de esta identidad. Contacto: <a href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a>.</p></section>
+<section id="resumen" class="doc-s"><h2><span class="num">2</span>Resumen en lenguaje claro</h2><ul><li>Tus videos y fotos originales se procesan en tu teléfono y no se suben.</li><li>Solo si eliges recibir el resultado por WhatsApp, el video <strong>ya optimizado</strong> se sube de forma temporal y cifrada a nuestro servidor para poder enviártelo.</li><li>Ese video se elimina al confirmarse la entrega y, como máximo, en aproximadamente una hora.</li><li>No pedimos cuenta, nombre ni correo, y no usamos publicidad ni analítica de terceros.</li><li>WhatsApp vuelve a comprimir los videos al publicarlos en Estados; VYRO no puede evitarlo.</li></ul></section>
+<section id="que-hace" class="doc-s"><h2><span class="num">3</span>Qué hace VYRO</h2><p>VYRO permite elegir o grabar un video o una foto y optimizarlo (ajuste real de resolución y calidad, sin inventar detalle) para compartirlo después, por ejemplo en un Estado de WhatsApp. La optimización se ejecuta en el propio teléfono con los componentes de video de Android. La forma principal de uso es recibir el resultado en un chat de WhatsApp, lo que implica el envío temporal descrito en la sección “Entrega por WhatsApp”.</p></section>
+<section id="datos" class="doc-s"><h2><span class="num">4</span>Qué datos se tratan</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Dato</th><th scope="col">Dónde</th><th scope="col">Para qué</th></tr></thead><tbody><tr><th scope="row">Videos y fotos originales</th><td>Solo tu teléfono</td><td>Elegir y optimizar el archivo</td></tr><tr><th scope="row">Video optimizado</th><td>Tu teléfono; y servidor de VYRO si eliges entrega por WhatsApp</td><td>Entregártelo en el chat</td></tr><tr><th scope="row">Código de un solo uso</th><td>Servidor de VYRO</td><td>Identificar qué video entregar</td></tr><tr><th scope="row">Tu número de WhatsApp y el mensaje que envías</th><td>WhatsApp/Meta y Twilio; el servidor lo recibe pero no lo guarda en su base de datos</td><td>Saber a quién responder</td></tr><tr><th scope="row">Estado de la suscripción</th><td>Google Play; un indicador local en tu teléfono</td><td>Mostrar o no la marca de agua</td></tr><tr><th scope="row">Identificadores técnicos de mensaje y estado de entrega</th><td>Servidor de VYRO</td><td>Confirmar la entrega y evitar duplicados</td></tr></tbody></table></div></section>
+<section id="finalidades" class="doc-s"><h2><span class="num">5</span>Para qué usamos los datos</h2><ul><li>Optimizar tu video y entregártelo (ejecución del servicio que solicitas).</li><li>Confirmar la entrega, evitar duplicados y proteger el servicio frente a abusos.</li><li>Gestionar el acceso PRO con Google Play.</li><li>Responder a tus consultas de soporte.</li></ul><p>No usamos los datos para publicidad, perfiles ni venta a terceros.</p></section>
+<section id="archivos" class="doc-s"><h2><span class="num">6</span>Acceso a tus videos y fotos</h2><p>VYRO pide acceso a tu galería únicamente para que elijas el archivo a optimizar, y a la cámara y el micrófono únicamente si decides grabar un video nuevo dentro de la app. Los originales se leen y procesan localmente; nunca se suben ni se envían a un servidor de VYRO.</p></section>
+<section id="local" class="doc-s"><h2><span class="num">7</span>Datos que permanecen solo en tu dispositivo</h2><ul><li>Los videos y fotos que optimizas, guardados en el almacenamiento o la galería de tu teléfono.</li><li>El progreso de un procesamiento en curso (para mostrarlo si minimizas la app).</li><li>Si ya viste la introducción de la app.</li><li>Un indicador local del estado de suscripción, solo para mostrar la interfaz correcta al instante; siempre se sobrescribe con lo que informe Google Play.</li></ul><p>Estos datos no salen de tu teléfono ni se comparten con nosotros ni con terceros.</p></section>
+<section id="entrega" class="doc-s"><h2><span class="num">8</span>Entrega por WhatsApp y servidor de VYRO</h2><p>Cuando pulsas el botón para recibir el video en WhatsApp, la app envía por HTTPS el video <strong>ya optimizado</strong> (no el original) a un servidor de VYRO alojado en Fly.io, en Estados Unidos, y recibe un código aleatorio de un solo uso válido por 30 minutos. La app abre un chat con el número oficial de WhatsApp Business de VYRO con ese código escrito. Al pulsar ENVIAR, el servidor valida el código y te devuelve el video en ese mismo chat, desde donde puedes reenviarlo a tu Estado.</p><p>VYRO no mira, analiza, vende ni reutiliza el contenido de tus videos.</p></section>
+<section id="telefono" class="doc-s"><h2><span class="num">9</span>Tu número de teléfono y los mensajes</h2><p>El servidor recibe tu número de WhatsApp y el texto del mensaje (el código) solo para saber a quién responder. VYRO <strong>no guarda tu número</strong> en su base de datos ni lo usa para otro fin; en los registros técnicos del servidor aparece enmascarado. La plataforma de Meta y Twilio sí tratan tu número y los datos del mensaje según sus propias políticas.</p></section>
+<section id="conservacion" class="doc-s"><h2><span class="num">10</span>Cuánto tiempo se conserva</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Qué</th><th scope="col">Plazo</th></tr></thead><tbody><tr><th scope="row">Código de un solo uso</th><td>Caduca a los 30 minutos y solo sirve una vez</td></tr><tr><th scope="row">Video optimizado en el servidor</th><td>Se elimina al confirmarse la entrega y, como máximo, en aproximadamente una hora (30 minutos de validez del código más un margen de limpieza)</td></tr><tr><th scope="row">Enlaces temporales de descarga para Twilio</th><td>Caducan a los 15 minutos</td></tr><tr><th scope="row">Identificadores técnicos de mensaje y estado de entrega</th><td>7 días</td></tr><tr><th scope="row">Metadatos de un envío finalizado (sin el video)</th><td>30 días</td></tr></tbody></table></div><p>Un código ya usado o caducado no permite volver a recibir el video.</p></section>
+<section id="terceros" class="doc-s"><h2><span class="num">11</span>Proveedores que participan</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Proveedor</th><th scope="col">Qué hace</th><th scope="col">Datos que trata</th></tr></thead><tbody><tr><th scope="row">Meta (WhatsApp Business Platform)</th><td>Transporta los mensajes de WhatsApp</td><td>Tu número, fecha y estado de los mensajes, según su política</td></tr><tr><th scope="row">Twilio</th><td>Proveedor de mensajería que envía y recibe los mensajes de WhatsApp de VYRO</td><td>Tu número, fecha, estado de entrega y el archivo enviado mientras dura la entrega; puede conservar registros de mensajería según su política</td></tr><tr><th scope="row">Fly.io</th><td>Aloja el servidor de entrega (Estados Unidos)</td><td>El video optimizado de forma temporal; registros técnicos como direcciones IP</td></tr><tr><th scope="row">Google Play</th><td>Distribución y facturación de la suscripción</td><td>Datos de pago y de tu cuenta de Google; VYRO solo recibe el estado de acceso</td></tr><tr><th scope="row">Vercel</th><td>Aloja este sitio web</td><td>Registros técnicos de acceso, como la dirección IP, para operar y proteger el servicio</td></tr></tbody></table></div><p>Cada proveedor trata los datos bajo su propia política de privacidad. VYRO no vende datos personales.</p></section>
+<section id="transferencias" class="doc-s"><h2><span class="num">12</span>Transferencias internacionales</h2><p>El servidor de entrega está en Estados Unidos y los proveedores anteriores pueden tratar datos fuera de tu país. Al usar la entrega por WhatsApp aceptas ese tratamiento para el único fin de enviarte tu video.</p></section>
+<section id="permisos" class="doc-s"><h2><span class="num">13</span>Permisos de Android</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th scope="col">Permiso</th><th scope="col">Para qué se usa</th></tr></thead><tbody><tr><th scope="row">Fotos y videos (galería)</th><td>Elegir el archivo que quieres optimizar</td></tr><tr><th scope="row">Cámara y micrófono</th><td>Solo si grabas un video nuevo desde VYRO</td></tr><tr><th scope="row">Notificaciones</th><td>Avisarte localmente cuando termina el procesamiento</td></tr><tr><th scope="row">Servicio en primer plano / evitar suspensión</th><td>Que el procesamiento continúe si minimizas la app o bloqueas la pantalla</td></tr><tr><th scope="row">Facturación de Google Play</th><td>Comprar y gestionar la suscripción PRO</td></tr><tr><th scope="row">Internet</th><td>Facturación con Google Play y, si eliges la entrega por WhatsApp, enviar el video optimizado al servidor</td></tr></tbody></table></div><p>Android los solicita cuando hacen falta y puedes revisarlos o revocarlos en Ajustes del sistema.</p></section>
+<section id="suscripciones" class="doc-s"><h2><span class="num">14</span>Suscripciones y pagos</h2><p>VYRO PRO se gestiona íntegramente con <strong>Google Play Billing</strong>. Google procesa el pago, la elegibilidad de cualquier prueba gratuita, la renovación, la cancelación y los reembolsos. VYRO no ve ni almacena tu tarjeta ni tus datos de pago: solo recibe de Google Play un estado de acceso (activo o inactivo). “Restaurar compra” se resuelve consultando a Google Play con tu cuenta de Google; VYRO no tiene cuenta ni contraseña propias.</p></section>
+<section id="ads" class="doc-s"><h2><span class="num">15</span>Publicidad y analítica de terceros</h2><p>La aplicación no integra SDK de publicidad, rastreo ni analítica de terceros (verificado en el código). No se usan identificadores de publicidad ni se comparte información con redes publicitarias.</p></section>
+<section id="web" class="doc-s"><h2><span class="num">16</span>Este sitio web y las cookies</h2><p>Este sitio no usa cookies, no usa herramientas de analítica ni de publicidad y no guarda datos en tu navegador. El proveedor de hosting (Vercel) puede registrar datos técnicos de acceso, como la dirección IP, para operar y proteger el servicio. Si nos escribes por correo, usamos tu mensaje solo para responderte.</p></section>
+<section id="seguridad" class="doc-s"><h2><span class="num">17</span>Seguridad</h2><p>La optimización ocurre en tu teléfono, así que la seguridad de tus originales depende de Android y de tu dispositivo. El video enviado para su entrega viaja cifrado (HTTPS), se identifica con un código aleatorio imposible de adivinar y se elimina automáticamente. Ningún sistema es infalible, pero reducimos al mínimo los datos y el tiempo de conservación.</p></section>
+<section id="sin-servidor" class="doc-s"><h2><span class="num">18</span>Alternativa sin servidor</h2><p>Si usas la opción de compartir el archivo mediante el menú de Android, VYRO entrega el archivo directamente al sistema operativo y no pasa por ningún servidor de VYRO. En ese caso WhatsApp aplicará su propia compresión al archivo.</p></section>
+<section id="menores" class="doc-s"><h2><span class="num">19</span>Menores de edad</h2><p>VYRO es una herramienta de optimización de video de propósito general, no dirigida específicamente a niños, y no recopila intencionalmente datos personales de menores.</p></section>
+<section id="derechos" class="doc-s"><h2><span class="num">20</span>Tus derechos</h2><p>Puedes pedir acceso, rectificación o eliminación de los datos que tengamos sobre ti, y oponerte a su tratamiento, en los términos de la normativa aplicable (en Perú, la Ley N.º 29733 de Protección de Datos Personales). Como VYRO no guarda tu número de teléfono ni conserva tus videos más allá de la entrega, normalmente no existe un perfil tuyo que consultar. Los registros que conserven Meta, Twilio o Google se rigen por sus propias políticas y los derechos sobre ellos se ejercen ante cada proveedor.</p></section>
+<section id="solicitudes" class="doc-s"><h2><span class="num">21</span>Cómo pedir la eliminación de datos</h2><p>Escribe a <a href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a> indicando el código de entrega o la fecha aproximada del envío. Como los archivos se eliminan automáticamente en aproximadamente una hora, y el resto de los registros se depura en los plazos indicados arriba, es posible que ya no exista nada que borrar. Desinstalar la app elimina sus preferencias locales; tus videos optimizados siguen en la galería hasta que los borres.</p></section>
+<section id="independencia" class="doc-s"><h2><span class="num">22</span>Independencia de WhatsApp y Meta</h2><p>VYRO es una aplicación independiente. No está afiliada, respaldada ni patrocinada por WhatsApp LLC ni por Meta Platforms, Inc. WhatsApp es una marca de sus respectivos propietarios.</p></section>
+<section id="cambios" class="doc-s"><h2><span class="num">23</span>Cambios en esta política</h2><p>Si esta política cambia, se actualizará en esta página con una nueva fecha de vigencia. Los cambios sustanciales se reflejarán también en la ficha de la app.</p></section>
+<section id="contacto" class="doc-s"><h2><span class="num">24</span>Contacto</h2><p>Responsable: Jerry Boy Official.<br>Correo: <a href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a>.</p></section></div>
+  </div>
+</article>
 </main>
-
-<footer>
-  <div class="lang-block" data-lang="es">VYRO HD Video Optimizer &middot; Desarrollado por Jerry Boy Official</div>
-  <div class="lang-block" data-lang="en">VYRO HD Video Optimizer &middot; Developed by Jerry Boy Official</div>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <a class="brand" href="/"><img src="/assets/logo-96.png" alt="" width="36" height="36"><span>VYRO</span></a>
+        <p>VYRO HD Video Optimizer</p>
+        <p class="muted">Desarrollado por Jerry Boy Official</p>
+      </div>
+      <div>
+        <h2 class="ftr-h">Producto</h2>
+        <ul>
+          <li><a href="/#how">Cómo funciona</a></li>
+          <li><a href="/#features">Características</a></li>
+          <li><a href="/#plans">Planes</a></li>
+          <li><a href="/#downloads">Descargas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ftr-h">Legal</h2>
+        <ul>
+          <li><a href="/privacy.html">Política de privacidad</a></li>
+          <li><a href="/terms.html">Términos y condiciones</a></li>
+          <li><a href="/support.html">Centro de ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ftr-h">Contacto</h2>
+        <ul>
+          <li><a href="mailto:jerryguanipa@gmail.com">jerryguanipa@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ftr-note">VYRO es una aplicación independiente. No está afiliada, respaldada ni patrocinada por WhatsApp LLC ni por Meta Platforms, Inc. WhatsApp y WhatsApp Business son marcas de sus respectivos propietarios. Google Play es una marca de Google LLC.</p>
+    <p class="ftr-copy">© 2026 Jerry Boy Official. Todos los derechos reservados.</p>
+  </div>
 </footer>
-
-<script src="assets/lang.js"></script>
-<script src="assets/site.js"></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
