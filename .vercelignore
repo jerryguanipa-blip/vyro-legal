@@ -5,3 +5,5 @@ site.config.mjs
 package.json
 README.md
 docs
+
+build
