@@ -16,7 +16,7 @@ export const other = (lang) => (lang === 'es' ? 'en' : 'es');
 
 // {email} / {privacyUrl} placeholders used by the legal + help sources
 export function fill(html, lang) {
-  return html.replaceAll('{email}', cfg.contactEmail).replaceAll('{privacyUrl}', path(lang, 'privacy'));
+  return html.replaceAll('{email}', cfg.contactEmail).replaceAll('{operator}', cfg.operator).replaceAll('{privacyUrl}', path(lang, 'privacy'));
 }
 
 // ---- icons ------------------------------------------------------------------------------------

@@ -139,7 +139,7 @@ export const copy = {
           'Acceso mientras la suscripción esté activa',
         ],
       },
-      fine: 'Las partes de 60 segundos se exportan en 720p para mantener el archivo dentro del límite de WhatsApp. Cancela cuando quieras desde Google Play; los reembolsos siguen las políticas de Google Play.',
+      fine: 'Las partes de 60 segundos se exportan en 720p para mantener el archivo dentro del límite de WhatsApp. Cada plan puede tener un límite de uso razonable, que verás en la app. Cancela cuando quieras desde Google Play; los reembolsos siguen las políticas de Google Play.',
     },
     faq: {
       eyebrow: 'Preguntas frecuentes',
@@ -324,7 +324,7 @@ export const copy = {
           'Access while the subscription is active',
         ],
       },
-      fine: '60-second parts are exported at 720p to keep the file within WhatsApp’s limit. Cancel anytime from Google Play; refunds follow Google Play policies.',
+      fine: '60-second parts are exported at 720p to keep the file within WhatsApp’s limit. Each plan may have a reasonable usage limit, shown in the app. Cancel anytime from Google Play; refunds follow Google Play policies.',
     },
     faq: {
       eyebrow: 'Frequently asked questions',

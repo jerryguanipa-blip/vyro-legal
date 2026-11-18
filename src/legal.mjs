@@ -10,7 +10,7 @@ export const privacy = {
     lead: 'Qué datos trata VYRO, para qué, durante cuánto tiempo y con qué proveedores. Redactada a partir de la revisión del código y de la configuración reales de la aplicación.',
     sections: [
       { id: 'responsable', h: 'Quién es el responsable', p: [
-        `El responsable del tratamiento es <strong>Jerry Boy Official</strong>, desarrollador individual de <strong>VYRO HD Video Optimizer</strong> (“VYRO”, paquete Android <code>com.statusmax.statusmax</code>). No se declara una empresa registrada distinta de esta identidad. Contacto: <a href="mailto:${E}">${E}</a>.`] },
+        `El responsable del tratamiento es <strong>{operator}</strong>, titular de <strong>VYRO HD Video Optimizer</strong> (“VYRO”, paquete Android <code>com.statusmax.statusmax</code>). Contacto: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'resumen', h: 'Resumen en lenguaje claro', ul: [
         'Tus videos y fotos originales se procesan en tu teléfono y no se suben.',
         'Solo si eliges recibir el resultado por WhatsApp, el video <strong>ya optimizado</strong> se sube de forma temporal y cifrada a nuestro servidor para poder enviártelo.',
@@ -47,7 +47,7 @@ export const privacy = {
         'Cuando pulsas el botón para recibir el video en WhatsApp, la app envía por HTTPS el video <strong>ya optimizado</strong> (no el original) a un servidor de VYRO alojado en Fly.io, en Estados Unidos, y recibe un código aleatorio de un solo uso válido por 30 minutos. La app abre un chat con el número oficial de WhatsApp Business de VYRO con ese código escrito. Al pulsar ENVIAR, el servidor valida el código y te devuelve el video en ese mismo chat, desde donde puedes reenviarlo a tu Estado.',
         'VYRO no mira, analiza, vende ni reutiliza el contenido de tus videos.'] },
       { id: 'telefono', h: 'Tu número de teléfono y los mensajes', p: [
-        'El servidor recibe tu número de WhatsApp y el texto del mensaje (el código) solo para saber a quién responder. VYRO <strong>no guarda tu número</strong> en su base de datos ni lo usa para otro fin; en los registros técnicos del servidor aparece enmascarado. La plataforma de Meta y Twilio sí tratan tu número y los datos del mensaje según sus propias políticas.'] },
+        'El servidor recibe tu número de WhatsApp y el texto del mensaje (el código) solo para saber a quién responder. VYRO <strong>no guarda tu número</strong> en su base de datos ni lo usa para otro fin; en los registros técnicos del servidor aparece enmascarado. Para aplicar límites de uso y evitar abusos conserva solo una huella irreconocible derivada de tu número (no permite recuperarlo) junto con la fecha de cada envío. La plataforma de Meta y Twilio sí tratan tu número y los datos del mensaje según sus propias políticas.'] },
       { id: 'conservacion', h: 'Cuánto tiempo se conserva', table: {
         head: ['Qué', 'Plazo'],
         rows: [
@@ -56,6 +56,7 @@ export const privacy = {
           ['Enlaces temporales de descarga para Twilio', 'Caducan a los 15 minutos'],
           ['Identificadores técnicos de mensaje y estado de entrega', '7 días'],
           ['Metadatos de un envío finalizado (sin el video)', '30 días'],
+          ['Huella irreconocible del remitente y fecha de cada envío (para límites de uso)', '35 días'],
         ] },
         p: ['Un código ya usado o caducado no permite volver a recibir el video.'] },
       { id: 'terceros', h: 'Proveedores que participan', table: {
@@ -102,7 +103,7 @@ export const privacy = {
       { id: 'cambios', h: 'Cambios en esta política', p: [
         'Si esta política cambia, se actualizará en esta página con una nueva fecha de vigencia. Los cambios sustanciales se reflejarán también en la ficha de la app.'] },
       { id: 'contacto', h: 'Contacto', p: [
-        `Responsable: Jerry Boy Official.<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
+        `Responsable: {operator}.<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
 
@@ -111,7 +112,7 @@ export const privacy = {
     lead: 'What data VYRO processes, why, for how long and with which providers. Written from a review of the app’s real code and configuration.',
     sections: [
       { id: 'responsable', h: 'Who is responsible', p: [
-        `The data controller is <strong>Jerry Boy Official</strong>, individual developer of <strong>VYRO HD Video Optimizer</strong> (“VYRO”, Android package <code>com.statusmax.statusmax</code>). No registered company is claimed beyond this identity. Contact: <a href="mailto:${E}">${E}</a>.`] },
+        `The data controller is <strong>{operator}</strong>, owner of <strong>VYRO HD Video Optimizer</strong> (“VYRO”, Android package <code>com.statusmax.statusmax</code>). Contact: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'resumen', h: 'Plain-language summary', ul: [
         'Your original videos and photos are processed on your phone and are not uploaded.',
         'Only if you choose to receive the result on WhatsApp is the <strong>already-optimized</strong> video temporarily uploaded, encrypted, to our server so it can be delivered to you.',
@@ -148,7 +149,7 @@ export const privacy = {
         'When you tap the button to receive the video on WhatsApp, the app sends the <strong>already-optimized</strong> video (not the original) over HTTPS to a VYRO server hosted on Fly.io in the United States and receives a random single-use code valid for 30 minutes. The app opens a chat with VYRO’s official WhatsApp Business number with that code typed in. When you press SEND, the server validates the code and sends the video back to you in that same chat, from where you can forward it to your Status.',
         'VYRO does not view, analyze, sell or reuse the content of your videos.'] },
       { id: 'telefono', h: 'Your phone number and messages', p: [
-        'The server receives your WhatsApp number and the message text (the code) only to know whom to reply to. VYRO <strong>does not store your number</strong> in its database or use it for any other purpose; it appears masked in the server’s technical logs. Meta’s platform and Twilio do process your number and message data under their own policies.'] },
+        'The server receives your WhatsApp number and the message text (the code) only to know whom to reply to. VYRO <strong>does not store your number</strong> in its database or use it for any other purpose; it appears masked in the server’s technical logs. To apply usage limits and prevent abuse it keeps only an irreversible fingerprint derived from your number (it cannot be used to recover it) together with the date of each delivery. Meta’s platform and Twilio do process your number and message data under their own policies.'] },
       { id: 'conservacion', h: 'How long data is kept', table: {
         head: ['What', 'Period'],
         rows: [
@@ -157,6 +158,7 @@ export const privacy = {
           ['Temporary download links for Twilio', 'Expire after 15 minutes'],
           ['Technical message identifiers and delivery status', '7 days'],
           ['Metadata of a finished delivery (without the video)', '30 days'],
+          ['Irreversible sender fingerprint and date of each delivery (for usage limits)', '35 days'],
         ] },
         p: ['A used or expired code cannot be used to receive the video again.'] },
       { id: 'terceros', h: 'Providers involved', table: {
@@ -203,7 +205,7 @@ export const privacy = {
       { id: 'cambios', h: 'Changes to this policy', p: [
         'If this policy changes, it will be updated on this page with a new effective date. Substantial changes will also be reflected in the app listing.'] },
       { id: 'contacto', h: 'Contact', p: [
-        `Controller: Jerry Boy Official.<br>Email: <a href="mailto:${E}">${E}</a>.`] },
+        `Controller: {operator}.<br>Email: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
 };
@@ -214,12 +216,13 @@ export const terms = {
     lead: 'Reglas de uso de VYRO HD Video Optimizer. Al usar la aplicación aceptas estos términos.',
     sections: [
       { id: 'quienes', h: 'Quiénes somos', p: [
-        `VYRO HD Video Optimizer (“VYRO”, “la aplicación”) es desarrollada por <strong>Jerry Boy Official</strong>, desarrollador individual (no se declara una empresa registrada distinta de esta identidad). Contacto: <a href="mailto:${E}">${E}</a>.`] },
+        `VYRO HD Video Optimizer (“VYRO”, “la aplicación”) es operada por <strong>{operator}</strong>. Contacto: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'licencia', h: 'Licencia de uso', p: [
         'Se te concede una licencia personal, no exclusiva y no transferible para usar VYRO en tus dispositivos, únicamente para optimizar contenido de tu propiedad o sobre el que tengas derecho a procesarlo y compartirlo.'] },
       { id: 'planes', h: 'Planes FREE y PRO', ul: [
         '<strong>FREE:</strong> permite optimizar videos sin costo. Los videos incluyen la marca de agua “VYRO FREE” y se dividen en partes de 30 segundos.',
-        '<strong>PRO:</strong> suscripción que elimina la marca de agua y habilita partes de 45 y 60 segundos mientras la suscripción esté activa según el estado que informe Google Play. Las partes de 60 segundos se exportan en 720p para mantener el archivo dentro del límite de WhatsApp.'] },
+        '<strong>PRO:</strong> suscripción que elimina la marca de agua y habilita partes de 45 y 60 segundos mientras la suscripción esté activa según el estado que informe Google Play. Las partes de 60 segundos se exportan en 720p para mantener el archivo dentro del límite de WhatsApp.',
+        '<strong>Límites de uso:</strong> para proteger el servicio, cada plan puede tener un límite razonable de envíos por día, semana o mes. Los límites vigentes se muestran en la aplicación y pueden ajustarse con aviso. Cuando se alcanza un límite, el código sigue vigente y puedes volver a intentarlo cuando se renueve el periodo.'] },
       { id: 'pagos', h: 'Suscripciones, precios y pagos', p: [
         'VYRO PRO se ofrece mediante suscripción gestionada por <strong>Google Play</strong>. Los planes, precios, moneda e impuestos aplicables, así como cualquier prueba gratuita, son los que Google Play muestre en tu país en el momento de la compra y según tu elegibilidad. La activación, renovación, cancelación, facturación y reembolsos se rigen por los términos y políticas de Google Play. VYRO no procesa ni almacena datos de tarjeta o de pago.'] },
       { id: 'renovacion', h: 'Renovación, cancelación y reembolsos', p: [
@@ -233,17 +236,17 @@ export const terms = {
       { id: 'terceros', h: 'Plataformas de terceros', p: [
         'VYRO prepara el archivo de partida, pero WhatsApp aplica su propio procesamiento y compresión al publicar un Estado. VYRO no garantiza que el contenido compartido mediante aplicaciones de terceros conserve una calidad concreta tras ese procesamiento, que está fuera de nuestro control. VYRO es independiente y no está afiliada ni respaldada por WhatsApp LLC ni por Meta Platforms, Inc.'] },
       { id: 'propiedad', h: 'Propiedad intelectual', p: [
-        'El nombre “VYRO”, su logotipo, la marca de agua y los demás elementos de marca pertenecen a Jerry Boy Official. Conservas todos los derechos sobre tu propio contenido; VYRO no reclama ninguna propiedad sobre él.'] },
+        'El nombre “VYRO”, su logotipo, la marca de agua y los demás elementos de marca pertenecen a {operator}. Conservas todos los derechos sobre tu propio contenido; VYRO no reclama ninguna propiedad sobre él.'] },
       { id: 'disponibilidad', h: 'Disponibilidad del servicio', p: [
         'VYRO se ofrece “tal cual”. No garantizamos que la aplicación esté libre de errores ni disponible de forma ininterrumpida; el rendimiento varía según el dispositivo, la versión de Android y las condiciones del teléfono. El servicio de entrega por WhatsApp depende de proveedores externos y puede interrumpirse.'] },
       { id: 'responsabilidad', h: 'Limitación de responsabilidad', p: [
-        'En la medida permitida por la ley aplicable, Jerry Boy Official no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de VYRO, incluida la pérdida de datos o los resultados de calidad tras el procesamiento de terceros. Nada en estos términos limita derechos irrenunciables del consumidor.'] },
+        'En la medida permitida por la ley aplicable, {operator} no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de VYRO, incluida la pérdida de datos o los resultados de calidad tras el procesamiento de terceros. Nada en estos términos limita derechos irrenunciables del consumidor.'] },
       { id: 'ley', h: 'Ley aplicable', p: [
         'Estos términos se rigen por las leyes de la República del Perú. Para cualquier controversia, las partes se someten a los tribunales competentes de Perú, sin perjuicio de los derechos que la normativa de protección al consumidor te reconozca.'] },
       { id: 'cambios', h: 'Cambios', p: [
         'Podemos actualizar VYRO y estos términos. Los cambios relevantes se reflejarán en esta página con una nueva fecha de vigencia.'] },
       { id: 'contacto', h: 'Contacto', p: [
-        `Desarrollador: Jerry Boy Official.<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
+        `Titular: {operator}.<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
   en: {
@@ -251,12 +254,13 @@ export const terms = {
     lead: 'The rules for using VYRO HD Video Optimizer. By using the app you accept these terms.',
     sections: [
       { id: 'quienes', h: 'Who we are', p: [
-        `VYRO HD Video Optimizer (“VYRO”, “the app”) is developed by <strong>Jerry Boy Official</strong>, an individual developer (no registered company is claimed beyond this identity). Contact: <a href="mailto:${E}">${E}</a>.`] },
+        `VYRO HD Video Optimizer (“VYRO”, “the app”) is operated by <strong>{operator}</strong>. Contact: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'licencia', h: 'License to use', p: [
         'You are granted a personal, non-exclusive, non-transferable license to use VYRO on your devices, solely to optimize content you own or otherwise have the right to process and share.'] },
       { id: 'planes', h: 'FREE and PRO plans', ul: [
         '<strong>FREE:</strong> lets you optimize videos at no cost. Videos include the “VYRO FREE” watermark and are split into 30-second parts.',
-        '<strong>PRO:</strong> a subscription that removes the watermark and enables 45- and 60-second parts for as long as the subscription is active according to the status reported by Google Play. 60-second parts are exported at 720p to keep the file within WhatsApp’s limit.'] },
+        '<strong>PRO:</strong> a subscription that removes the watermark and enables 45- and 60-second parts for as long as the subscription is active according to the status reported by Google Play. 60-second parts are exported at 720p to keep the file within WhatsApp’s limit.',
+        '<strong>Usage limits:</strong> to protect the service, each plan may have a reasonable limit on deliveries per day, week or month. The current limits are shown in the app and may be adjusted with notice. When a limit is reached the code stays valid and you can try again when the period renews.'] },
       { id: 'pagos', h: 'Subscriptions, pricing and payment', p: [
         'VYRO PRO is offered as a subscription managed by <strong>Google Play</strong>. The plans, prices, currency, applicable taxes and any free trial are those Google Play shows in your country at the time of purchase and according to your eligibility. Activation, renewal, cancellation, billing and refunds are governed by Google Play’s terms and policies. VYRO does not process or store card or payment data.'] },
       { id: 'renovacion', h: 'Renewal, cancellation and refunds', p: [
@@ -270,17 +274,17 @@ export const terms = {
       { id: 'terceros', h: 'Third-party platforms', p: [
         'VYRO prepares the starting file, but WhatsApp applies its own processing and compression when you post a Status. VYRO does not guarantee that content shared through third-party apps keeps a specific quality after that processing, which is outside our control. VYRO is independent and is not affiliated with or endorsed by WhatsApp LLC or Meta Platforms, Inc.'] },
       { id: 'propiedad', h: 'Intellectual property', p: [
-        'The name “VYRO”, its logo, the watermark and the other brand elements belong to Jerry Boy Official. You keep all rights to your own content; VYRO claims no ownership of it.'] },
+        'The name “VYRO”, its logo, the watermark and the other brand elements belong to {operator}. You keep all rights to your own content; VYRO claims no ownership of it.'] },
       { id: 'disponibilidad', h: 'Service availability', p: [
         'VYRO is provided “as is”. We do not guarantee that the app is error-free or uninterrupted; performance varies with the device, the Android version and the phone’s conditions. WhatsApp delivery depends on external providers and may be interrupted.'] },
       { id: 'responsabilidad', h: 'Limitation of liability', p: [
-        'To the extent permitted by applicable law, Jerry Boy Official will not be liable for indirect, incidental or consequential damages arising from the use of VYRO, including data loss or quality results after third-party processing. Nothing in these terms limits non-waivable consumer rights.'] },
+        'To the extent permitted by applicable law, {operator} will not be liable for indirect, incidental or consequential damages arising from the use of VYRO, including data loss or quality results after third-party processing. Nothing in these terms limits non-waivable consumer rights.'] },
       { id: 'ley', h: 'Governing law', p: [
         'These terms are governed by the laws of the Republic of Peru. For any dispute, the parties submit to the competent courts of Peru, without prejudice to the rights consumer protection law grants you.'] },
       { id: 'cambios', h: 'Changes', p: [
         'We may update VYRO and these terms. Relevant changes will be reflected on this page with a new effective date.'] },
       { id: 'contacto', h: 'Contact', p: [
-        `Developer: Jerry Boy Official.<br>Email: <a href="mailto:${E}">${E}</a>.`] },
+        `Owner: {operator}.<br>Email: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
 };
