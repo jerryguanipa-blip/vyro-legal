@@ -4,6 +4,10 @@ import { copy } from './copy.mjs';
 export const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+// Two Google Fonts families (the only third-party origin the site talks to; see the CSP in vercel.json):
+// Bricolage Grotesque for text and headlines, JetBrains Mono for figures (MB, resolutions, fps, prices).
+export const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap';
+
 // ---- URLs -------------------------------------------------------------------------------------
 const PAGES = { home: '', privacy: 'privacy.html', terms: 'terms.html', support: 'support.html' };
 
@@ -56,14 +60,12 @@ export function shell({ lang, page, title, description, bodyClass = '', main, js
   const home = path(lang, 'home');
   const anchor = (id) => `${home}#${id}`;
   const nav = [
-    ['home', c.nav.home, home],
     ['how', c.nav.how, anchor('how')],
     ['features', c.nav.features, anchor('features')],
-    ['compare', c.nav.compare, anchor('compare')],
+    ['proof', c.nav.proof, anchor('proof')],
     ['plans', c.nav.plans, anchor('plans')],
-    ['faq', c.nav.faq, anchor('faq')],
-    ['support', c.nav.support, path(lang, 'support')],
     ['downloads', c.nav.downloads, anchor('downloads')],
+    ['support', c.nav.support, path(lang, 'support')],
   ];
   const og = ogImage ?? (lang === 'en' ? '/assets/og-en.png' : '/assets/og.png');
   const alts = alternates === undefined
@@ -105,6 +107,9 @@ ${hreflang}
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${abs(og)}">
 <script src="/assets/boot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="${FONTS_URL}">
 <link rel="stylesheet" href="/assets/style.css">
 ${ld}
 </head>
@@ -114,7 +119,7 @@ ${ld}
   <div class="wrap hdr-in">
     <a class="brand" href="${home}" aria-label="${cfg.brand}"><img src="/assets/logo-96.png" alt="" width="36" height="36"><span>VYRO</span></a>
     <nav class="nav" id="nav" aria-label="${esc(c.nav.menu)}">
-      ${nav.map(([k, label, href]) => `<a href="${href}"${k === page || (k === 'home' && page === 'home') ? ' aria-current="page"' : ''}>${esc(label)}</a>`).join('\n      ')}
+      ${nav.map(([k, label, href]) => `<a href="${href}"${k === page ? ' aria-current="page"' : ''}>${esc(label)}</a>`).join('\n      ')}
     </nav>
     <div class="hdr-tools">
       <a class="lang" href="${switchHref}" hreflang="${other(lang)}" lang="${other(lang)}" title="${esc(c.langSwitch.title)}" aria-label="${esc(c.langSwitch.title)}">${c.langSwitch.short}</a>

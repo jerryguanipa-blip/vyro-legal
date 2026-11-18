@@ -45,11 +45,30 @@ for (const [page, h] of Object.entries(html)) {
     if (!existsSync(join(root, file.slice(1)))) fail(page, `broken link ${ref}`);
     else if (frag && file.endsWith('.html') && !(ids[target.endsWith('/') ? target : target] ?? ids[toUrl(file.slice(1))])?.has(frag)) fail(page, `missing anchor ${ref}`);
   }
-  // no hard-coded prices anywhere
-  if (/(S\/\s?\d|USD|\$\s?\d|€\s?\d)/.test(h)) fail(page, 'price-looking text found (prices must come from Google Play only)');
+  // prices are allowed ONLY inside the plans block (<section id="plans">); everywhere else they are a bug
+  const outsidePlans = h.replace(/<section class="sec" id="plans"[\s\S]*?<\/section>/, '');
+  if (/(S\/\s?\d|USD|\$\s?\d|€\s?\d)/.test(outsidePlans)) fail(page, 'price-looking text outside the plans block');
+  // personal / company data must not leak into the public pages
+  if (/jerryguanipa|gmail\.com|Desarrollado por|Developed by|E\.I\.R\.L\.\./.test(h)) fail(page, 'personal email / "developed by" / double period leaked');
+  if (page !== 'privacy.html' && page !== 'terms.html' && page !== 'en/privacy.html' && page !== 'en/terms.html' && /CARIBE/.test(h)) fail(page, 'company name outside the legal pages');
+  // third-party origins: only Google Fonts (CSS + font files)
+  for (const m of h.matchAll(/<(?:link|script)[^>]+(?:href|src)="(https?:\/\/[^"]+)"/g)) {
+    if (!/^https:\/\/fonts\.(googleapis|gstatic)\.com(\/|$)/.test(m[1]) && !m[1].startsWith(cfg.siteUrl)) fail(page, `unexpected third-party resource ${m[1]}`);
+  }
   // no store badge unless a real URL is configured
   if (!cfg.stores.googlePlay.url && /play\.google\.com/.test(h)) fail(page, 'Google Play link without a configured listing');
   if (!cfg.stores.appStore.url && /apps\.apple\.com/.test(h)) fail(page, 'App Store link without a configured listing');
+}
+
+// home: plans block carries the four plans, the recommended one is marked, hero CTA does not point at downloads
+for (const [p, prices] of [['index.html', ['S/ 0', 'S/ 6,90', 'S/ 19,90', 'S/ 129,90']], ['en/index.html', ['S/ 0', 'S/ 6.90', 'S/ 19.90', 'S/ 129.90']]]) {
+  for (const pr of prices) if (!html[p].includes(`>${pr}<`)) fail(p, `plan price ${pr} missing`);
+  if ((html[p].match(/class="plan reveal rec"/g) ?? []).length !== 1) fail(p, 'exactly one recommended plan expected');
+  if (!html[p].includes('ILUSTRATIV') && !html[p].includes('ILLUSTRATIVE')) fail(p, 'before/after mock-up must be labelled illustrative');
+  const hero = html[p].match(/<section class="hero"[\s\S]*?<\/section>/)?.[0] ?? '';
+  if (/#downloads/.test(hero)) fail(p, 'hero must not link to the (empty) downloads section');
+  if ((html[p].match(/<section class="sec"/g) ?? []).length !== 6) fail(p, 'home must have hero + 6 sections (7 blocks)');
+  if (!html[p].includes('contacto@vyrohd.com') && !process.env.CONTACT_EMAIL) fail(p, 'default contact email missing');
 }
 
 // sitemap: every indexable page, with alternates

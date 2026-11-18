@@ -9,7 +9,7 @@ const shots = process.argv[3] ?? './shots';
 const exe = process.argv[4];
 mkdirSync(shots, { recursive: true });
 
-const WIDTHS = [320, 375, 414, 768, 1024, 1280, 1440, 1920];
+const WIDTHS = [320, 375, 400, 414, 768, 1024, 1280, 1440, 1920];
 const PAGES = ['/', '/privacy.html', '/terms.html', '/support.html', '/en/', '/en/privacy.html', '/en/terms.html', '/en/support.html'];
 const results = [];
 const fails = [];
@@ -49,11 +49,11 @@ for (const w of WIDTHS) {
     check(`images ${tag}`, m.imgsBad.length === 0, m.imgsBad.join(','));
     check(`tap-targets ${tag}`, m.small === 0, `${m.small} too small`);
     check(`console-clean ${tag}`, errors.length === 0, errors.join(' | '));
-    if (p === '/' && [320, 375, 768, 1440, 1920].includes(w)) {
+    if (p === '/' && [320, 375, 400, 768, 1440, 1920].includes(w)) {
       await page.screenshot({ path: `${shots}/home_${w}.png`, fullPage: true });
       m.h1lines && console.log(`  h1 lines @${w}: ${m.h1lines}`);
     }
-    if (['/privacy.html', '/support.html', '/en/'].includes(p) && [375, 1440].includes(w)) await page.screenshot({ path: `${shots}/${p.replace(/\W+/g, '_')}_${w}.png`, fullPage: true });
+    if (['/privacy.html', '/support.html', '/en/'].includes(p) && [400, 1440].includes(w)) await page.screenshot({ path: `${shots}/${p.replace(/\W+/g, '_')}_${w}.png`, fullPage: true });
   }
   await ctx.close();
 }
@@ -92,6 +92,12 @@ for (const w of WIDTHS) {
   check('faq accordion opens', await page.locator('#faq details:first-child').evaluate((e) => e.open));
   check('lang switch ES->EN', (await page.getAttribute('.lang', 'href')) === '/en/');
   check('no store badge without real listing', (await page.locator('a[href*="play.google.com"], a[href*="apps.apple.com"]').count()) === 0);
+  check('hero primary CTA goes to #how', (await page.getAttribute('.hero-cta .btn-primary', 'href')) === '/#how');
+  check('4 plans, one recommended', (await page.locator('.plan').count()) === 4 && (await page.locator('.plan.rec').count()) === 1);
+  check('recommended plan is Mensual', /Mensual/.test(await page.textContent('.plan.rec')));
+  const fonts = await page.evaluate(async () => { await document.fonts.ready; return ['Bricolage Grotesque', 'JetBrains Mono'].map((f) => document.fonts.check(`16px "${f}"`)); });
+  check('both Google Fonts families load', fonts.every(Boolean), JSON.stringify(fonts));
+  check('footer has contact email and no company name', /contacto@vyrohd\.com/.test(await page.textContent('.ftr')) && !/CARIBE|gmail/i.test(await page.textContent('.ftr')));
   check('coming-soon label present', /Próximamente/.test(await page.textContent('#downloads')));
   await ctx.close();
 }

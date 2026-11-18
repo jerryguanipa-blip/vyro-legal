@@ -3,165 +3,129 @@ import { copy } from './copy.mjs';
 import { privacy, terms } from './legal.mjs';
 import { help } from './help.mjs';
 import { shell, esc, icon, path, abs, fill } from './layout.mjs';
-
-const FEATURE_ICONS = ['hd', 'lock', 'chip', 'split', 'scissors', 'text', 'music', 'mute', 'rec', 'biz', 'chat', 'share'];
+import { sceneDefs, frameSvg } from './scene.mjs';
 
 // ---- home ---------------------------------------------------------------------------------------
-function phone(lang) {
-  const c = copy[lang];
-  const m = c.mock;
-  const dec = lang === 'es' ? '27,9' : '27.9';
-  return `<div class="phone-stage">
-    <div class="glow" aria-hidden="true"></div>
-    <div class="float f1" aria-hidden="true">${icon('lock')}<span>${esc(c.hero.float1)}</span></div>
-    <div class="float f2" aria-hidden="true">${icon('hd')}<span>${esc(c.hero.float2)}</span></div>
-    <div class="float f3" aria-hidden="true">${icon('split')}<span>${esc(c.hero.float3)}</span></div>
-    <figure class="phone-fig">
-      <div class="phone" role="img" aria-label="${esc(c.hero.caption)}">
-        <div class="phone-btn" aria-hidden="true"></div>
-        <div class="screen">
-          <div class="cam" aria-hidden="true"></div>
-          <div class="app-top"><img src="/assets/logo-96.png" alt="" width="26" height="26"><span>${esc(m.app)}</span></div>
-          <div class="tile" aria-hidden="true"><span class="tile-play">${icon('play')}</span><span class="tile-badge">1080 × 1920</span></div>
-          <div class="ready"><span class="ready-ck">${icon('check')}</span><div><b>${esc(m.ready)}</b><small>${esc(m.readySub)}</small></div></div>
-          <div class="stats">
-            <div><small>${esc(m.original)}</small><b>519 MB</b><em>2160 × 3840</em></div>
-            <div class="opt"><small>${esc(m.optimized)}</small><b>${dec} MB</b><em>1080 × 1920</em></div>
-          </div>
-          <div class="banner">${esc(m.banner)}</div>
-          <div class="cta">${icon('chat')}<span>${esc(m.cta)}</span></div>
-        </div>
-      </div>
-      <figcaption>${esc(c.hero.caption)}</figcaption>
-    </figure>
-  </div>`;
-}
-
 function storeButtons(lang) {
   const c = copy[lang].downloads;
   const out = [];
-  if (cfg.stores.googlePlay.url) out.push(`<a class="store" href="${cfg.stores.googlePlay.url}" rel="noopener">${icon('store')}<span><small>${esc(c.play)}</small></span></a>`);
+  if (cfg.stores.googlePlay.url) out.push(`<a class="store" href="${cfg.stores.googlePlay.url}" rel="noopener">${icon('store')}<span><b>${esc(c.play)}</b></span></a>`);
   else out.push(`<div class="store soon" aria-disabled="true">${icon('store')}<span><b>${esc(c.soon)}</b><small>${esc(c.soonSub)}</small></span></div>`);
-  if (cfg.stores.appStore.url) out.push(`<a class="store" href="${cfg.stores.appStore.url}" rel="noopener"><span><small>${esc(c.apple)}</small></span></a>`);
+  if (cfg.stores.appStore.url) out.push(`<a class="store" href="${cfg.stores.appStore.url}" rel="noopener"><span><b>${esc(c.apple)}</b></span></a>`);
   return out.join('\n');
 }
+
+const head = (id, eyebrow, h2, lead) =>
+  `<header class="sec-h reveal"><p class="eyebrow">${esc(eyebrow)}</p><h2 id="t-${id}">${esc(h2)}</h2>${lead ? `<p class="sub">${esc(lead)}</p>` : ''}</header>`;
 
 export function home(lang) {
   const c = copy[lang];
   const h = path(lang, 'home');
-  const heroCtaHref = `${h}#downloads`;
 
   const main = `
 <section class="hero" aria-labelledby="h1">
-  <div class="wrap hero-in">
-    <p class="pill"><span class="dot"></span>${esc(c.hero.pill)}</p>
-    <h1 id="h1"><span>${esc(c.hero.h1a)}</span> <span class="grad">${esc(c.hero.h1b)}</span></h1>
-    <p class="lead">${esc(c.hero.lead)}</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="${heroCtaHref}">${esc(c.hero.cta1)}${icon('arrow', 'ic ic-sm')}</a>
-      <a class="btn btn-ghost" href="${h}#how">${esc(c.hero.cta2)}</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="tick" aria-hidden="true"></span>${esc(c.hero.eyebrow)}</p>
+      <h1 id="h1"><span>${esc(c.hero.h1a)}</span> <span class="acc">${esc(c.hero.h1b)}</span></h1>
+      <p class="thesis">${esc(c.hero.thesis)}</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="${h}#how">${esc(c.hero.cta1)}${icon('arrow', 'ic ic-sm')}</a>
+        <a class="btn btn-ghost" href="${h}#plans">${esc(c.hero.cta2)}</a>
+      </div>
+      <ul class="chips">${c.hero.chips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
     </div>
-    <ul class="chips" aria-label="${esc(c.hero.pill)}">${c.hero.chips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
-  </div>
-  <div class="wrap">${phone(lang)}</div>
-</section>
-
-<section class="sec" id="problem" aria-labelledby="t-problem">
-  <div class="wrap">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.problem.eyebrow)}</p><h2 id="t-problem">${esc(c.problem.h2)}</h2><p class="sub">${esc(c.problem.lead)}</p></header>
-    <ol class="flow reveal">
-      ${c.problem.steps.map((s, i) => `<li class="flow-i${i === 1 ? ' hi' : ''}"><span class="flow-n">${i + 1}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></li>`).join('\n      ')}
-    </ol>
-    <p class="note reveal">${icon('shield', 'ic ic-sm')}<span>${esc(c.problem.note)}</span></p>
+    <div class="readout" role="group" aria-label="${esc(c.readout.aria)}">
+      <p class="ro-label"><span>${esc(c.readout.label)}</span><span>${esc(c.readout.device)}</span></p>
+      <p class="ro-big"><span class="ro-from">${esc(c.readout.from)}</span><span class="ro-arrow" aria-hidden="true">→</span><span class="ro-to">${esc(c.readout.to)}</span></p>
+      <div class="ro-bar" aria-hidden="true"><i></i></div>
+      <p class="ro-foot">${esc(c.readout.foot)}</p>
+      <dl class="ro-rows">${c.readout.rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+    </div>
   </div>
 </section>
 
-<section class="sec alt" id="how" aria-labelledby="t-how">
+<section class="sec" id="contrast" aria-labelledby="t-contrast">
   <div class="wrap">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.how.eyebrow)}</p><h2 id="t-how">${esc(c.how.h2)}</h2><p class="sub">${esc(c.how.lead)}</p></header>
-    <ol class="steps">
-      ${c.how.steps.map((s) => `<li class="step reveal"><span class="step-n">${s.n}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></li>`).join('\n      ')}
-    </ol>
+    ${head('contrast', c.contrast.eyebrow, c.contrast.h2, c.contrast.lead)}
+    ${sceneDefs}
+    <div class="strip reveal" role="group" aria-label="${esc(c.contrast.alt)}">
+      ${c.contrast.frames.map((f, i) => `<figure class="frame${i === 2 ? ' win' : ''}">
+        <div class="shot"><span class="ill mono">${lang === 'es' ? 'ILUSTRATIVO' : 'ILLUSTRATIVE'}</span>${frameSvg(['orig', 'raw', 'soft'][i])}</div>
+        <figcaption><b>${esc(f.t)}</b><span class="mono">${esc(f.m)}</span><span class="d">${esc(f.d)}</span></figcaption>
+      </figure>`).join('\n      ')}
+    </div>
+    <p class="fine reveal">${esc(c.contrast.label)}</p>
+  </div>
+</section>
+
+<section class="sec" id="how" aria-labelledby="t-how">
+  <div class="wrap how-grid">
+    <div class="how-intro">${head('how', c.how.eyebrow, c.how.h2, c.how.lead)}</div>
+    <div class="how-body">
+      <ol class="steps">
+        ${c.how.steps.map((s, i) => `<li class="step reveal${i === 2 ? ' key' : ''}"><span class="step-n mono">${s.n}</span><div><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></div></li>`).join('\n        ')}
+      </ol>
+      <aside class="why reveal"><h3>${esc(c.how.whyH)}</h3><p>${esc(c.how.why)}</p></aside>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="features" aria-labelledby="t-features">
   <div class="wrap">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.features.eyebrow)}</p><h2 id="t-features">${esc(c.features.h2)}</h2><p class="sub">${esc(c.features.lead)}</p></header>
-    <ul class="bento">
-      ${c.features.items.map((f, i) => `<li class="card feat reveal${f.w === 2 ? ' w2' : ''}"><span class="ico">${icon(FEATURE_ICONS[i])}</span><h3>${esc(f.t)}</h3><p>${esc(f.d)}</p></li>`).join('\n      ')}
+    ${head('features', c.features.eyebrow, c.features.h2)}
+    <ul class="feats">
+      ${c.features.items.map((f) => `<li class="feat reveal"><span class="tag mono">${esc(f.tag)}</span><h3>${esc(f.t)}</h3><p>${esc(f.d)}</p></li>`).join('\n      ')}
     </ul>
+    <p class="more reveal">${esc(c.features.more)} <a class="link" href="${path(lang, 'privacy')}">${esc(c.features.moreLink)}${icon('arrow', 'ic ic-sm')}</a></p>
   </div>
 </section>
 
-<section class="sec alt" id="compare" aria-labelledby="t-compare">
+<section class="sec" id="proof" aria-labelledby="t-proof">
   <div class="wrap">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.compare.eyebrow)}</p><h2 id="t-compare">${esc(c.compare.h2)}</h2><p class="sub">${esc(c.compare.lead)}</p></header>
-    <div class="cmp card reveal">
-      <div class="bars" aria-hidden="true">
-        <div class="bar-row"><span>${esc(c.compare.colA)}</span><div class="bar"><i class="full"></i></div><b>519 MB</b></div>
-        <div class="bar-row"><span>${esc(c.compare.colB)}</span><div class="bar"><i class="tiny"></i></div><b>${lang === 'es' ? '27,9' : '27.9'} MB</b></div>
-      </div>
-      <div class="tbl-wrap">
-        <table class="tbl">
-          <thead><tr><th scope="col"></th><th scope="col">${esc(c.compare.colA)}</th><th scope="col" class="hi">${esc(c.compare.colB)}</th></tr></thead>
-          <tbody>${c.compare.rows.map((r) => `<tr><th scope="row">${esc(r[0])}</th><td>${esc(r[1])}</td><td class="hi">${esc(r[2])}</td></tr>`).join('')}</tbody>
-        </table>
-      </div>
+    ${head('proof', c.proof.eyebrow, c.proof.h2, c.proof.lead)}
+    <ul class="bigstats reveal">${c.proof.stats.map((x) => `<li><b class="mono">${esc(x.v)}</b><span>${esc(x.l)}</span></li>`).join('')}</ul>
+    <div class="tbl-wrap reveal">
+      <table class="tbl proof-tbl">
+        <thead><tr><th scope="col"><span class="sr">${esc(c.proof.eyebrow)}</span></th><th scope="col">${esc(c.proof.colA)}</th><th scope="col" class="hi">${esc(c.proof.colB)}</th></tr></thead>
+        <tbody>${c.proof.rows.map((r) => `<tr><th scope="row">${esc(r[0])}</th><td class="mono">${esc(r[1])}</td><td class="mono hi">${esc(r[2])}</td></tr>`).join('')}</tbody>
+      </table>
     </div>
-    <p class="note reveal">${icon('shield', 'ic ic-sm')}<span>${esc(c.compare.note)}</span></p>
+    <p class="fine reveal">${esc(c.proof.note)}</p>
   </div>
 </section>
 
-<section class="sec" id="privacy" aria-labelledby="t-privacy">
+<section class="sec" id="plans" aria-labelledby="t-plans">
   <div class="wrap">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.privacy.eyebrow)}</p><h2 id="t-privacy">${esc(c.privacy.h2)}</h2><p class="sub">${esc(c.privacy.lead)}</p></header>
-    <ul class="trio">
-      ${c.privacy.cards.map((x, i) => `<li class="card reveal"><span class="ico">${icon(['phone', 'cloud', 'trash'][i])}</span><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p></li>`).join('\n      ')}
-    </ul>
-    <p class="center reveal"><a class="link" href="${path(lang, 'privacy')}">${esc(c.privacy.link)}${icon('arrow', 'ic ic-sm')}</a></p>
-  </div>
-</section>
-
-<section class="sec alt" id="plans" aria-labelledby="t-plans">
-  <div class="wrap">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.plans.eyebrow)}</p><h2 id="t-plans">${esc(c.plans.h2)}</h2><p class="sub">${esc(c.plans.lead)}</p></header>
-    <div class="plans">
-      ${['free', 'pro'].map((k) => {
-        const p = c.plans[k];
-        return `<article class="card plan reveal${k === 'pro' ? ' pro' : ''}">
-        ${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ''}
-        <p class="plan-tag">${esc(p.tag)}</p>
+    ${head('plans', c.plans.eyebrow, c.plans.h2, c.plans.lead)}
+    <ul class="plans">
+      ${c.plans.items.map((p) => `<li class="plan reveal${p.rec ? ' rec' : ''}">
+        ${p.rec ? `<span class="badge mono">${esc(c.plans.rec)}</span>` : ''}
         <h3>${esc(p.name)}</h3>
-        <ul>${p.items.map((i) => `<li>${icon('check', 'ic ic-sm')}<span>${esc(i)}</span></li>`).join('')}</ul>
-      </article>`;
-      }).join('\n      ')}
-    </div>
+        <p class="price mono">${esc(p.price)}<small>${p.per ? esc(p.per) : '&nbsp;'}</small></p>
+        <p class="cap"><b class="mono">${esc(p.cap)}</b> <span>${esc(p.capPer)}</span></p>
+        <p class="pnote">${esc(p.note)}</p>
+      </li>`).join('\n      ')}
+    </ul>
     <p class="fine reveal">${esc(c.plans.fine)}</p>
   </div>
 </section>
 
-<section class="sec" id="faq" aria-labelledby="t-faq">
-  <div class="wrap narrow">
-    <header class="sec-h reveal"><p class="eyebrow">${esc(c.faq.eyebrow)}</p><h2 id="t-faq">${esc(c.faq.h2)}</h2></header>
-    <div class="acc reveal">
-      ${c.faq.items.map((f) => `<details><summary><span>${esc(f.q)}</span>${icon('arrow', 'ic ic-chev')}</summary><div class="acc-b"><p>${esc(f.a)}</p></div></details>`).join('\n      ')}
-    </div>
-  </div>
-</section>
-
-<section class="sec cta-sec" id="downloads" aria-labelledby="t-dl">
-  <div class="wrap">
-    <div class="cta-box reveal">
+<section class="sec" id="downloads" aria-labelledby="t-dl">
+  <div class="wrap dl-grid">
+    <div class="dl reveal">
       <p class="eyebrow">${esc(c.downloads.eyebrow)}</p>
       <h2 id="t-dl">${esc(c.downloads.h2)}</h2>
       <p class="sub">${esc(c.downloads.lead)}</p>
       <div class="stores">${storeButtons(lang)}</div>
       <p class="fine">${esc(c.downloads.ios)}</p>
     </div>
-    <div class="help-strip reveal">
-      <div><h3>${esc(c.contact.h)}</h3><p>${esc(c.contact.p)}</p></div>
-      <a class="btn btn-ghost" href="${path(lang, 'support')}">${esc(c.contact.cta)}${icon('arrow', 'ic ic-sm')}</a>
+    <div class="faq reveal" id="faq">
+      <h3 class="faq-h">${esc(c.downloads.faqH)}</h3>
+      <div class="acc">
+        ${c.faq.items.map((f) => `<details><summary><span>${esc(f.q)}</span>${icon('arrow', 'ic ic-chev')}</summary><div class="acc-b"><p>${esc(f.a)}</p></div></details>`).join('\n        ')}
+      </div>
+      <p class="more"><span>${esc(c.contact.h)}</span> <a class="link" href="${path(lang, 'support')}">${esc(c.contact.cta)}${icon('arrow', 'ic ic-sm')}</a></p>
     </div>
   </div>
 </section>`;

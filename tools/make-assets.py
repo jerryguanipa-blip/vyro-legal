@@ -24,29 +24,41 @@ def font(bold, size):
     return ImageFont.load_default()
 
 
-def og(lang, line1, line2, sub, out):
+def mono(size):
+    for f in ("consolab.ttf", "consola.ttf", "cour.ttf"):
+        p = FONTS / f
+        if p.exists():
+            return ImageFont.truetype(str(p), size)
+    return ImageFont.load_default()
+
+
+ACCENT = (25, 184, 255)  # sampled from the app icon
+
+
+def og(lang, line1, line2, sub, readout, out):
     W, H = 1200, 630
     img = Image.new("RGB", (W, H), (7, 8, 12))
-    glow = Image.new("RGB", (W, H), (7, 8, 12))
-    d = ImageDraw.Draw(glow)
-    d.ellipse((560, -260, 1360, 540), fill=(70, 80, 220))
-    d.ellipse((-200, 300, 520, 900), fill=(40, 70, 170))
-    glow = glow.filter(ImageFilter.GaussianBlur(150))
-    img = Image.blend(img, glow, 0.55)
     d = ImageDraw.Draw(img)
-    # icon on the right
-    ic = icon.resize((330, 330), Image.LANCZOS)
-    img.paste(ic, (800, 150), ic)
-    d.text((72, 86), "VYRO", font=font(True, 34), fill=(238, 240, 246))
-    d.text((72, 190), line1, font=font(True, 66), fill=(238, 240, 246))
-    # gradient-ish second line: blue
-    d.text((72, 270), line2, font=font(True, 66), fill=(120, 150, 255))
-    d.text((72, 390), sub, font=font(False, 30), fill=(163, 170, 187))
-    d.rounded_rectangle((72, 480, 72 + 270, 480 + 56), radius=28, outline=(120, 150, 255), width=2)
-    d.text((72 + 28, 491), "Full HD · Android", font=font(True, 26), fill=(190, 205, 255))
+    for gx in range(20, W, 28):  # faint dot grid, like the site hero
+        for gy in range(20, H, 28):
+            d.point((gx, gy), fill=(30, 33, 42))
+    ic = icon.resize((72, 72), Image.LANCZOS)
+    img.paste(ic, (72, 64), ic)
+    d.text((166, 80), "VYRO", font=font(True, 38), fill=(238, 240, 246))
+    d.text((72, 190), line1, font=font(True, 76), fill=(238, 240, 246))
+    d.text((72, 276), line2, font=font(True, 76), fill=ACCENT)
+    d.text((72, 392), sub, font=font(False, 30), fill=(160, 169, 186))
+    # readout panel
+    d.rectangle((72, 460, 72 + 640, 460 + 96), fill=(13, 17, 24))
+    d.line((72, 460, 72 + 18, 460), fill=ACCENT, width=3)
+    d.line((72, 460, 72, 460 + 18), fill=ACCENT, width=3)
+    d.text((96, 482), readout[0], font=mono(44), fill=(125, 134, 153))
+    x = 96 + d.textlength(readout[0], font=mono(44))
+    d.text((x + 16, 482), "->", font=mono(44), fill=(125, 134, 153))
+    d.text((x + 80, 482), readout[1], font=mono(44), fill=ACCENT)
     img.save(out, optimize=True)
 
 
-og("es", "Tus videos merecen", "verse mejor.", "Optimiza tus videos para Estados de WhatsApp", ASSETS / "og.png")
-og("en", "Your videos deserve", "to look better.", "Optimize your videos for WhatsApp Status", ASSETS / "og-en.png")
+og("es", "Tus videos merecen", "verse mejor.", "Hechos para sobrevivir a la compresión de WhatsApp", ("519 MB", "27,9 MB"), ASSETS / "og.png")
+og("en", "Your videos deserve", "to look better.", "Built to survive WhatsApp’s compression", ("519 MB", "27.9 MB"), ASSETS / "og-en.png")
 print("assets ok")

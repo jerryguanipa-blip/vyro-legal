@@ -67,6 +67,7 @@ export const privacy = {
           ['Fly.io', 'Aloja el servidor de entrega (Estados Unidos)', 'El video optimizado de forma temporal; registros técnicos como direcciones IP'],
           ['Google Play', 'Distribución y facturación de la suscripción', 'Datos de pago y de tu cuenta de Google; VYRO solo recibe el estado de acceso'],
           ['Vercel', 'Aloja este sitio web', 'Registros técnicos de acceso, como la dirección IP, para operar y proteger el servicio'],
+          ['Google Fonts (Google LLC)', 'Sirve la tipografía de este sitio web', 'Dirección IP y datos técnicos de la solicitud de tu navegador'],
         ] },
         p: ['Cada proveedor trata los datos bajo su propia política de privacidad. VYRO no vende datos personales.'] },
       { id: 'transferencias', h: 'Transferencias internacionales', p: [
@@ -87,7 +88,7 @@ export const privacy = {
       { id: 'ads', h: 'Publicidad y analítica de terceros', p: [
         'La aplicación no integra SDK de publicidad, rastreo ni analítica de terceros (verificado en el código). No se usan identificadores de publicidad ni se comparte información con redes publicitarias.'] },
       { id: 'web', h: 'Este sitio web y las cookies', p: [
-        'Este sitio no usa cookies, no usa herramientas de analítica ni de publicidad y no guarda datos en tu navegador. El proveedor de hosting (Vercel) puede registrar datos técnicos de acceso, como la dirección IP, para operar y proteger el servicio. Si nos escribes por correo, usamos tu mensaje solo para responderte.'] },
+        'Este sitio no usa cookies, no usa herramientas de analítica ni de publicidad y no guarda datos en tu navegador. El proveedor de hosting (Vercel) puede registrar datos técnicos de acceso, como la dirección IP, para operar y proteger el servicio. Para mostrar la tipografía, tu navegador la descarga de Google Fonts (Google LLC), que recibe tu dirección IP y los datos técnicos de esa solicitud. Si nos escribes por correo, usamos tu mensaje solo para responderte.'] },
       { id: 'seguridad', h: 'Seguridad', p: [
         'La optimización ocurre en tu teléfono, así que la seguridad de tus originales depende de Android y de tu dispositivo. El video enviado para su entrega viaja cifrado (HTTPS), se identifica con un código aleatorio imposible de adivinar y se elimina automáticamente. Ningún sistema es infalible, pero reducimos al mínimo los datos y el tiempo de conservación.'] },
       { id: 'sin-servidor', h: 'Alternativa sin servidor', p: [
@@ -169,6 +170,7 @@ export const privacy = {
           ['Fly.io', 'Hosts the delivery server (United States)', 'The optimized video temporarily; technical logs such as IP addresses'],
           ['Google Play', 'Distribution and subscription billing', 'Payment and Google account data; VYRO only receives the access status'],
           ['Vercel', 'Hosts this website', 'Technical access logs, such as the IP address, to operate and protect the service'],
+          ['Google Fonts (Google LLC)', 'Serves this website’s typefaces', 'IP address and technical data of your browser’s request'],
         ] },
         p: ['Each provider processes data under its own privacy policy. VYRO does not sell personal data.'] },
       { id: 'transferencias', h: 'International transfers', p: [
@@ -189,7 +191,7 @@ export const privacy = {
       { id: 'ads', h: 'Third-party advertising and analytics', p: [
         'The app does not integrate third-party advertising, tracking or analytics SDKs (verified in the code). No advertising identifiers are used and no information is shared with ad networks.'] },
       { id: 'web', h: 'This website and cookies', p: [
-        'This site does not use cookies, analytics or advertising tools and does not store data in your browser. The hosting provider (Vercel) may log technical access data, such as the IP address, to operate and protect the service. If you email us, we use your message only to reply to you.'] },
+        'This site does not use cookies, analytics or advertising tools and does not store data in your browser. The hosting provider (Vercel) may log technical access data, such as the IP address, to operate and protect the service. To display the typefaces, your browser downloads them from Google Fonts (Google LLC), which receives your IP address and the technical data of that request. If you email us, we use your message only to reply to you.'] },
       { id: 'seguridad', h: 'Security', p: [
         'Optimization happens on your phone, so the security of your originals depends on Android and your device. The video sent for delivery travels encrypted (HTTPS), is identified by an unguessable random code and is deleted automatically. No system is infallible, but we keep data and retention time to a minimum.'] },
       { id: 'sin-servidor', h: 'Server-free alternative', p: [
@@ -221,7 +223,7 @@ export const terms = {
         'Se te concede una licencia personal, no exclusiva y no transferible para usar VYRO en tus dispositivos, únicamente para optimizar contenido de tu propiedad o sobre el que tengas derecho a procesarlo y compartirlo.'] },
       { id: 'planes', h: 'Planes FREE y PRO', ul: [
         '<strong>FREE:</strong> permite optimizar videos sin costo. Los videos incluyen la marca de agua “VYRO FREE” y se dividen en partes de 30 segundos.',
-        '<strong>PRO:</strong> suscripción que elimina la marca de agua y habilita partes de 45 y 60 segundos mientras la suscripción esté activa según el estado que informe Google Play. Las partes de 60 segundos se exportan en 720p para mantener el archivo dentro del límite de WhatsApp.',
+        '<strong>PRO (planes Semanal, Mensual y Anual):</strong> suscripción que elimina la marca de agua y habilita partes de 45 y 60 segundos mientras la suscripción esté activa según el estado que informe Google Play. Las partes de 60 segundos se exportan en 720p para mantener el archivo dentro del límite de WhatsApp.',
         '<strong>Límites de uso:</strong> para proteger el servicio, cada plan puede tener un límite razonable de envíos por día, semana o mes. Los límites vigentes se muestran en la aplicación y pueden ajustarse con aviso. Cuando se alcanza un límite, el código sigue vigente y puedes volver a intentarlo cuando se renueve el periodo.'] },
       { id: 'pagos', h: 'Suscripciones, precios y pagos', p: [
         'VYRO PRO se ofrece mediante suscripción gestionada por <strong>Google Play</strong>. Los planes, precios, moneda e impuestos aplicables, así como cualquier prueba gratuita, son los que Google Play muestre en tu país en el momento de la compra y según tu elegibilidad. La activación, renovación, cancelación, facturación y reembolsos se rigen por los términos y políticas de Google Play. VYRO no procesa ni almacena datos de tarjeta o de pago.'] },
@@ -259,7 +261,7 @@ export const terms = {
         'You are granted a personal, non-exclusive, non-transferable license to use VYRO on your devices, solely to optimize content you own or otherwise have the right to process and share.'] },
       { id: 'planes', h: 'FREE and PRO plans', ul: [
         '<strong>FREE:</strong> lets you optimize videos at no cost. Videos include the “VYRO FREE” watermark and are split into 30-second parts.',
-        '<strong>PRO:</strong> a subscription that removes the watermark and enables 45- and 60-second parts for as long as the subscription is active according to the status reported by Google Play. 60-second parts are exported at 720p to keep the file within WhatsApp’s limit.',
+        '<strong>PRO (Weekly, Monthly and Yearly plans):</strong> a subscription that removes the watermark and enables 45- and 60-second parts for as long as the subscription is active according to the status reported by Google Play. 60-second parts are exported at 720p to keep the file within WhatsApp’s limit.',
         '<strong>Usage limits:</strong> to protect the service, each plan may have a reasonable limit on deliveries per day, week or month. The current limits are shown in the app and may be adjusted with notice. When a limit is reached the code stays valid and you can try again when the period renews.'] },
       { id: 'pagos', h: 'Subscriptions, pricing and payment', p: [
         'VYRO PRO is offered as a subscription managed by <strong>Google Play</strong>. The plans, prices, currency, applicable taxes and any free trial are those Google Play shows in your country at the time of purchase and according to your eligibility. Activation, renewal, cancellation, billing and refunds are governed by Google Play’s terms and policies. VYRO does not process or store card or payment data.'] },
