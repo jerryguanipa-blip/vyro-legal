@@ -9,8 +9,10 @@ export default {
   operator: process.env.OPERATOR_NAME || 'CARIBE CURRIER E.I.R.L.',
   packageId: 'com.statusmax.statusmax',
 
-  // Public support mailbox. Keep the current one until a business mailbox is verified to receive AND send.
-  contactEmail: process.env.CONTACT_EMAIL || 'jerryguanipa@gmail.com',
+  // Public support mailbox. contacto@vyrohd.com only works once the domain is bought and the forwarding
+  // is active (docs/DOMINIO_Y_CORREO_PASO_A_PASO.md, step 1). Override with CONTACT_EMAIL.
+  contactEmail: process.env.CONTACT_EMAIL || 'contacto@vyrohd.com',
+  copyrightYear: 2026,
 
   // Store listings. A store button is rendered ONLY when `url` is a real listing URL.
   // Verified 2026-11-12: Google Play listing returns 404 (not published), no App Store listing exists

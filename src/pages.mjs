@@ -182,7 +182,6 @@ export function home(lang) {
       operatingSystem: 'Android',
       description: c.description,
       url: abs(h),
-      author: { '@type': 'Organization', name: cfg.operator },
     },
     {
       '@context': 'https://schema.org',

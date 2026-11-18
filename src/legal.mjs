@@ -10,7 +10,7 @@ export const privacy = {
     lead: 'Qué datos trata VYRO, para qué, durante cuánto tiempo y con qué proveedores. Redactada a partir de la revisión del código y de la configuración reales de la aplicación.',
     sections: [
       { id: 'responsable', h: 'Quién es el responsable', p: [
-        `El responsable del tratamiento es <strong>{operator}</strong>, titular de <strong>VYRO HD Video Optimizer</strong> (“VYRO”, paquete Android <code>com.statusmax.statusmax</code>). Contacto: <a href="mailto:${E}">${E}</a>.`] },
+        `El responsable del tratamiento es <strong>{operator}</strong>, titular de <strong>VYRO HD Video Optimizer</strong> (“VYRO”, paquete Android <code>com.statusmax.statusmax</code>). Contacto y ejercicio de tus derechos: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'resumen', h: 'Resumen en lenguaje claro', ul: [
         'Tus videos y fotos originales se procesan en tu teléfono y no se suben.',
         'Solo si eliges recibir el resultado por WhatsApp, el video <strong>ya optimizado</strong> se sube de forma temporal y cifrada a nuestro servidor para poder enviártelo.',
@@ -103,7 +103,7 @@ export const privacy = {
       { id: 'cambios', h: 'Cambios en esta política', p: [
         'Si esta política cambia, se actualizará en esta página con una nueva fecha de vigencia. Los cambios sustanciales se reflejarán también en la ficha de la app.'] },
       { id: 'contacto', h: 'Contacto', p: [
-        `Responsable: {operator}.<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
+        `Responsable: {operator}<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
 
@@ -112,7 +112,7 @@ export const privacy = {
     lead: 'What data VYRO processes, why, for how long and with which providers. Written from a review of the app’s real code and configuration.',
     sections: [
       { id: 'responsable', h: 'Who is responsible', p: [
-        `The data controller is <strong>{operator}</strong>, owner of <strong>VYRO HD Video Optimizer</strong> (“VYRO”, Android package <code>com.statusmax.statusmax</code>). Contact: <a href="mailto:${E}">${E}</a>.`] },
+        `The data controller is <strong>{operator}</strong>, owner of <strong>VYRO HD Video Optimizer</strong> (“VYRO”, Android package <code>com.statusmax.statusmax</code>). Contact and exercise of your rights: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'resumen', h: 'Plain-language summary', ul: [
         'Your original videos and photos are processed on your phone and are not uploaded.',
         'Only if you choose to receive the result on WhatsApp is the <strong>already-optimized</strong> video temporarily uploaded, encrypted, to our server so it can be delivered to you.',
@@ -205,7 +205,7 @@ export const privacy = {
       { id: 'cambios', h: 'Changes to this policy', p: [
         'If this policy changes, it will be updated on this page with a new effective date. Substantial changes will also be reflected in the app listing.'] },
       { id: 'contacto', h: 'Contact', p: [
-        `Controller: {operator}.<br>Email: <a href="mailto:${E}">${E}</a>.`] },
+        `Controller: {operator}<br>Email: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
 };
@@ -216,7 +216,7 @@ export const terms = {
     lead: 'Reglas de uso de VYRO HD Video Optimizer. Al usar la aplicación aceptas estos términos.',
     sections: [
       { id: 'quienes', h: 'Quiénes somos', p: [
-        `VYRO HD Video Optimizer (“VYRO”, “la aplicación”) es operada por <strong>{operator}</strong>. Contacto: <a href="mailto:${E}">${E}</a>.`] },
+        `VYRO HD Video Optimizer (“VYRO”, “la aplicación”) es operada por <strong>{operator}</strong>; contacto: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'licencia', h: 'Licencia de uso', p: [
         'Se te concede una licencia personal, no exclusiva y no transferible para usar VYRO en tus dispositivos, únicamente para optimizar contenido de tu propiedad o sobre el que tengas derecho a procesarlo y compartirlo.'] },
       { id: 'planes', h: 'Planes FREE y PRO', ul: [
@@ -236,17 +236,17 @@ export const terms = {
       { id: 'terceros', h: 'Plataformas de terceros', p: [
         'VYRO prepara el archivo de partida, pero WhatsApp aplica su propio procesamiento y compresión al publicar un Estado. VYRO no garantiza que el contenido compartido mediante aplicaciones de terceros conserve una calidad concreta tras ese procesamiento, que está fuera de nuestro control. VYRO es independiente y no está afiliada ni respaldada por WhatsApp LLC ni por Meta Platforms, Inc.'] },
       { id: 'propiedad', h: 'Propiedad intelectual', p: [
-        'El nombre “VYRO”, su logotipo, la marca de agua y los demás elementos de marca pertenecen a {operator}. Conservas todos los derechos sobre tu propio contenido; VYRO no reclama ninguna propiedad sobre él.'] },
+        'El nombre “VYRO”, su logotipo, la marca de agua y los demás elementos de marca pertenecen al titular de VYRO. Conservas todos los derechos sobre tu propio contenido; VYRO no reclama ninguna propiedad sobre él.'] },
       { id: 'disponibilidad', h: 'Disponibilidad del servicio', p: [
         'VYRO se ofrece “tal cual”. No garantizamos que la aplicación esté libre de errores ni disponible de forma ininterrumpida; el rendimiento varía según el dispositivo, la versión de Android y las condiciones del teléfono. El servicio de entrega por WhatsApp depende de proveedores externos y puede interrumpirse.'] },
       { id: 'responsabilidad', h: 'Limitación de responsabilidad', p: [
-        'En la medida permitida por la ley aplicable, {operator} no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de VYRO, incluida la pérdida de datos o los resultados de calidad tras el procesamiento de terceros. Nada en estos términos limita derechos irrenunciables del consumidor.'] },
+        'En la medida permitida por la ley aplicable, el titular de VYRO no será responsable por daños indirectos, incidentales o consecuentes derivados del uso de VYRO, incluida la pérdida de datos o los resultados de calidad tras el procesamiento de terceros. Nada en estos términos limita derechos irrenunciables del consumidor.'] },
       { id: 'ley', h: 'Ley aplicable', p: [
         'Estos términos se rigen por las leyes de la República del Perú. Para cualquier controversia, las partes se someten a los tribunales competentes de Perú, sin perjuicio de los derechos que la normativa de protección al consumidor te reconozca.'] },
       { id: 'cambios', h: 'Cambios', p: [
         'Podemos actualizar VYRO y estos términos. Los cambios relevantes se reflejarán en esta página con una nueva fecha de vigencia.'] },
       { id: 'contacto', h: 'Contacto', p: [
-        `Titular: {operator}.<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
+        `Titular: {operator}<br>Correo: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
   en: {
@@ -254,7 +254,7 @@ export const terms = {
     lead: 'The rules for using VYRO HD Video Optimizer. By using the app you accept these terms.',
     sections: [
       { id: 'quienes', h: 'Who we are', p: [
-        `VYRO HD Video Optimizer (“VYRO”, “the app”) is operated by <strong>{operator}</strong>. Contact: <a href="mailto:${E}">${E}</a>.`] },
+        `VYRO HD Video Optimizer (“VYRO”, “the app”) is operated by <strong>{operator}</strong>; contact: <a href="mailto:${E}">${E}</a>.`] },
       { id: 'licencia', h: 'License to use', p: [
         'You are granted a personal, non-exclusive, non-transferable license to use VYRO on your devices, solely to optimize content you own or otherwise have the right to process and share.'] },
       { id: 'planes', h: 'FREE and PRO plans', ul: [
@@ -274,17 +274,17 @@ export const terms = {
       { id: 'terceros', h: 'Third-party platforms', p: [
         'VYRO prepares the starting file, but WhatsApp applies its own processing and compression when you post a Status. VYRO does not guarantee that content shared through third-party apps keeps a specific quality after that processing, which is outside our control. VYRO is independent and is not affiliated with or endorsed by WhatsApp LLC or Meta Platforms, Inc.'] },
       { id: 'propiedad', h: 'Intellectual property', p: [
-        'The name “VYRO”, its logo, the watermark and the other brand elements belong to {operator}. You keep all rights to your own content; VYRO claims no ownership of it.'] },
+        'The name “VYRO”, its logo, the watermark and the other brand elements belong to the owner of VYRO. You keep all rights to your own content; VYRO claims no ownership of it.'] },
       { id: 'disponibilidad', h: 'Service availability', p: [
         'VYRO is provided “as is”. We do not guarantee that the app is error-free or uninterrupted; performance varies with the device, the Android version and the phone’s conditions. WhatsApp delivery depends on external providers and may be interrupted.'] },
       { id: 'responsabilidad', h: 'Limitation of liability', p: [
-        'To the extent permitted by applicable law, {operator} will not be liable for indirect, incidental or consequential damages arising from the use of VYRO, including data loss or quality results after third-party processing. Nothing in these terms limits non-waivable consumer rights.'] },
+        'To the extent permitted by applicable law, the owner of VYRO will not be liable for indirect, incidental or consequential damages arising from the use of VYRO, including data loss or quality results after third-party processing. Nothing in these terms limits non-waivable consumer rights.'] },
       { id: 'ley', h: 'Governing law', p: [
         'These terms are governed by the laws of the Republic of Peru. For any dispute, the parties submit to the competent courts of Peru, without prejudice to the rights consumer protection law grants you.'] },
       { id: 'cambios', h: 'Changes', p: [
         'We may update VYRO and these terms. Relevant changes will be reflected on this page with a new effective date.'] },
       { id: 'contacto', h: 'Contact', p: [
-        `Owner: {operator}.<br>Email: <a href="mailto:${E}">${E}</a>.`] },
+        `Owner: {operator}<br>Email: <a href="mailto:${E}">${E}</a>.`] },
     ],
   },
 };

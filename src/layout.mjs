@@ -136,40 +136,18 @@ function footer(lang) {
   const c = copy[lang];
   const f = c.footer;
   const home = path(lang, 'home');
+  const row = (label, links) => `<ul class="ftr-row" aria-label="${esc(label)}">${links
+    .map(([t, href], i) => `${i ? '<li class="sep" aria-hidden="true">·</li>' : ''}<li><a href="${href}">${esc(t)}</a></li>`)
+    .join('')}</ul>`;
   return `<footer class="ftr">
-  <div class="wrap">
-    <div class="ftr-grid">
-      <div class="ftr-brand">
-        <a class="brand" href="${home}"><img src="/assets/logo-96.png" alt="" width="36" height="36"><span>VYRO</span></a>
-        <p>${esc(cfg.product)}</p>
-        <p class="muted">${esc(f.by)} ${esc(cfg.operator)}</p>
-      </div>
-      <div>
-        <h2 class="ftr-h">${esc(f.product)}</h2>
-        <ul>
-          <li><a href="${home}#how">${esc(c.nav.how)}</a></li>
-          <li><a href="${home}#features">${esc(c.nav.features)}</a></li>
-          <li><a href="${home}#plans">${esc(c.nav.plans)}</a></li>
-          <li><a href="${home}#downloads">${esc(c.nav.downloads)}</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="ftr-h">${esc(f.legal)}</h2>
-        <ul>
-          <li><a href="${path(lang, 'privacy')}">${esc(f.privacy)}</a></li>
-          <li><a href="${path(lang, 'terms')}">${esc(f.terms)}</a></li>
-          <li><a href="${path(lang, 'support')}">${esc(f.support)}</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="ftr-h">${esc(f.contact)}</h2>
-        <ul>
-          <li><a href="mailto:${cfg.contactEmail}">${esc(cfg.contactEmail)}</a></li>
-        </ul>
-      </div>
-    </div>
+  <div class="wrap ftr-in">
+    <a class="brand" href="${home}" aria-label="${cfg.brand}"><img src="/assets/logo-96.png" alt="" width="36" height="36"><span>VYRO</span></a>
+    <p class="ftr-prod">${esc(cfg.product)}</p>
+    ${row(f.product, [[c.nav.how, `${home}#how`], [c.nav.features, `${home}#features`], [c.nav.plans, `${home}#plans`], [c.nav.downloads, `${home}#downloads`]])}
+    ${row(f.legal, [[f.privacy, path(lang, 'privacy')], [f.terms, path(lang, 'terms')], [f.support, path(lang, 'support')]])}
+    <p class="ftr-mail"><a href="mailto:${cfg.contactEmail}">${esc(cfg.contactEmail)}</a></p>
     <p class="ftr-note">${esc(f.disclaimer)}</p>
-    <p class="ftr-copy">© ${new Date().getFullYear()} ${esc(cfg.operator)}. ${esc(f.rights)}</p>
+    <p class="ftr-copy">© ${cfg.copyrightYear} ${esc(cfg.product)}. ${esc(f.rights)}</p>
   </div>
 </footer>`;
 }
